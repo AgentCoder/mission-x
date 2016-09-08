@@ -33,6 +33,10 @@ textarea {
     }
 }
 
+.logo{
+    color:white;
+}
+
 
     /*Style tags for cards in home dashboard*/
       
@@ -56,7 +60,7 @@ textarea {
             }
 
             #card2{
-                background: url('../../images/') center;
+                background: url('../../images/3point.png') center;
             }
             #card3{
                 background: url('../../images/3point.png') center;
@@ -65,3 +69,7 @@ textarea {
                 color: #fff;
             }
       
+
+            .mdl-textfield{
+                width:260px
+            }
