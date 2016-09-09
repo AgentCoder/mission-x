@@ -10,4 +10,3 @@ Team roles and responsibilities
 5.	Issues management: Tarakesh Gogi, Shravya Lankapalli
 6.	Quality and testing management:  Surya Sai Karthik Kuppili, Krishna Kishore Jujjavarapu
 7.	Communications and documentation management: Sai Theja Gandham, Shravya Channamadhavuni
- 
