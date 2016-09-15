@@ -73,3 +73,14 @@ textarea {
             .mdl-textfield{
                 width:260px
             }
+
+
+            .mdl-progress{
+
+                width:350px;
+            }
+
+            .mdl-progerss,#projectstatus{
+
+                width:1100px;
+            }
