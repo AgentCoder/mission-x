@@ -1,5 +1,4 @@
-﻿var generatedValue = "asldkljfsdkl";
-var angle = 0.0;
+﻿
 
 function quadrantToAzimuth() {
     var quadNot = document.getElementById("quadrant").value;
@@ -7,8 +6,9 @@ function quadrantToAzimuth() {
     quadNot = quadNot.trim();
     quadNot = quadNot.toUpperCase();
 
-    var val = quadNot.slice(1, 3);
-    var generatedValue = "";
+    var val = Number(quadNot.slice(1, 3));
+    var generatedValue = 0;
+    var angle = 0;
 
     if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "E") {
         generatedValue = val;
@@ -28,11 +28,13 @@ function quadrantToAzimuth() {
         generatedValue = 180 + Number(val);
         angle = 270 - Number(generatedValue);
     }
-    document.getElementById("azimuthal").innerHTML.value = generatedValue;
-    
-    window.alert(generatedValue + quadNot.substr(4));
+    window.alert(angle);
+    $(azimuthlabel).hide();
+    $(azimuthal).val(generatedValue + quadNot.substr(4));
+    // window.alert(generatedValue + quadNot.substr(4));
 
     generateFigure(angle);
+
     
 }
 
