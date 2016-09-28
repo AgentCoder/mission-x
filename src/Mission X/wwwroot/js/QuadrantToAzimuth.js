@@ -1,5 +1,9 @@
 ﻿
 
+
+
+
+
 function quadrantToAzimuth() {
     var quadNot = document.getElementById("quadrant").value;
 
@@ -31,6 +35,7 @@ function quadrantToAzimuth() {
     window.alert(angle);
     $(azimuthlabel).hide();
     $(azimuthal).val(generatedValue + quadNot.substr(4));
+    
     // window.alert(generatedValue + quadNot.substr(4));
 
     generateFigure(angle);

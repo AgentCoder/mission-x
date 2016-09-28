@@ -25,6 +25,7 @@
     }
     else 
     {
+        
         quadNot = "Please enter a valid azimuth notation";
     }
     window.alert(quadNot + azimuthNotation.substr(pos));
