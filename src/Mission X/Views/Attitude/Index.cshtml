@@ -4,59 +4,6 @@
 @{
 }
 
-@*<div class="panel panel-success">
-
-    <div class="mdl-card__title">
-        <div class="mdl-card__title-text">Simple Plan View Problems</div>
-    </div>
-
-    <div class="mdl-card__supporting-text"><h4>Please enter the respective notation to get the equivalent notations.</h4></div>
-   
-    <div class="mdl-card__actions mdl-card--border">
-
-
-        <form action="#">
-            <br />
-            <br>
-            <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="quadrant">
-                 <label class="mdl-textfield__label" for="quadrant">Quadrant Notation</label>  
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="azimuthal">
-                <label class="mdl-textfield__label" for="azimuthal">Azimuthal Notation</label>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input display-4" type="text" id="ddquad">
-                <label class="mdl-textfield__label" for="ddquad">Dip/Dip Qudrant Notation</label>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="ddquad">
-                <label class="mdl-textfield__label" for="ddquad">Dip/Dip Qudrant Notation</label>
-            </div>
-
-            <center>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick = "quadrantToAzimuth()">
-                    Submit
-                </button>
-             </center>
-           
-        </form>
-        <br />
-        <br />
-        <div class="mdl-card__title-text">Graphical Orientation </div>
-        <br />
-        <br />
-       <center> <canvas width="300" height="300" id="my_Canvas"></canvas></center>
-
-
-    </div>
-
-
-</div>*@
 
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
@@ -82,8 +29,9 @@
                     <br />
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant">
+                        <input class="mdl-textfield__input" type="text" id="quadrant" pattern="/[N|E|W|S|n|e|w|s][0-9][0-9][N|E|W|S|n|e|w|s],[0-9][0-9][N|E|W|S|n|e|w|s][N|E|W|S|n|e|w|s]/" error="Inavlaid Input..!!!">
                         <label class="mdl-textfield__label" for="quadrant">Quadrant Notation</label>
+                        
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield">
