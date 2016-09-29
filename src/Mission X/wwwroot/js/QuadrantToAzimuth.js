@@ -4,12 +4,9 @@
 
 
 
-function quadrantToAzimuth() {
-    var quadNot = document.getElementById("quadrant").value;
-
-    quadNot = quadNot.trim();
-    quadNot = quadNot.toUpperCase();
-
+function quadrantToAzimuth(x) {
+   
+    var quadNot = x;
     var val = Number(quadNot.slice(1, 3));
     var generatedValue = 0;
     var angle = 0;
@@ -32,14 +29,14 @@ function quadrantToAzimuth() {
         generatedValue = 180 + Number(val);
         angle = 270 - Number(generatedValue);
     }
-    window.alert(angle);
-    $(azimuthlabel).hide();
-    $(azimuthal).val(generatedValue + quadNot.substr(4));
+    //window.alert(angle);
+    
     
     // window.alert(generatedValue + quadNot.substr(4));
 
     generateFigure(angle);
 
+    return generatedValue + quadNot.substr(4);
     
 }
 
