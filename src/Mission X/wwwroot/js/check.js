@@ -2,10 +2,6 @@
 //Javascript file for checking the validation and re - routing
 
 
-var quad = document.getElementById("quadrant").value
-var azum = document.getElementById("azimuthal").value
-var ddquad = document.getElementById("ddquad").value
-var ddazum = document.getElementById("ddazu").value
 
 var i;
 var counter = 0;
@@ -15,8 +11,19 @@ var counter = 0;
 function check() {
     //******** VALIDATION for EMPTY TEXT FIELDS**********//
 
+    window.alert("reached check");
+    var quad = document.getElementById("quadrant1").value;
+
     if (quad != "" || quad != null) {
-       
+        var azimuth = quadrantToAzimuth(quad);
+        var dipdipquadrant = azimuthToDipQuad(azimuth);
+        var dipdipazimuth = dipDipQuadrantToDipDipAzimuth(dipdipquadrant);
+        $(azimuthlabel).hide();
+        $(azimuthal).val(azimuth);
+        $(dipdipquadlabel).hide();
+        $(ddquad).val(dipdipquadrant);
+        $(ddazulabel).hide();
+        $(ddazu).val(dipdipazimuth);
         counter++;
     }
       

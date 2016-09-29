@@ -4,16 +4,69 @@
 @{
 }
 
+@*<div class="panel panel-success">
+
+    <div class="mdl-card__title">
+        <div class="mdl-card__title-text">Simple Plan View Problems</div>
+    </div>
+
+    <div class="mdl-card__supporting-text"><h4>Please enter the respective notation to get the equivalent notations.</h4></div>
+   
+    <div class="mdl-card__actions mdl-card--border">
+
+
+        <form action="#">
+            <br />
+            <br>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="quadrant">
+                 <label class="mdl-textfield__label" for="quadrant">Quadrant Notation</label>  
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="azimuthal">
+                <label class="mdl-textfield__label" for="azimuthal">Azimuthal Notation</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input display-4" type="text" id="ddquad">
+                <label class="mdl-textfield__label" for="ddquad">Dip/Dip Qudrant Notation</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="ddquad">
+                <label class="mdl-textfield__label" for="ddquad">Dip/Dip Qudrant Notation</label>
+            </div>
+
+            <center>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick = "quadrantToAzimuth()">
+                    Submit
+                </button>
+             </center>
+           
+        </form>
+        <br />
+        <br />
+        <div class="mdl-card__title-text">Graphical Orientation </div>
+        <br />
+        <br />
+       <center> <canvas width="300" height="300" id="my_Canvas"></canvas></center>
+
+
+    </div>
+
+
+</div>*@
 
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#starks-panel" class="mdl-tabs__tab is-active">with symbols</a>
         <a href="#lannisters-panel" class="mdl-tabs__tab">without symbols</a>
-
+        
     </div>
 
     <div class="mdl-tabs__panel is-active" id="starks-panel">
-
+        
         <div class="panel panel-success">
 
             <div class="mdl-card__title">
@@ -29,9 +82,8 @@
                     <br />
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant" pattern="/[N|E|W|S|n|e|w|s][0-9][0-9][N|E|W|S|n|e|w|s],[0-9][0-9][N|E|W|S|n|e|w|s][N|E|W|S|n|e|w|s]/" error="Inavlaid Input..!!!">
+                        <input class="mdl-textfield__input" type="text" id="quadrant1">
                         <label class="mdl-textfield__label" for="quadrant">Quadrant Notation</label>
-
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield">
@@ -41,16 +93,16 @@
 
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input display-4" type="text" id="ddquad">
-                        <label class="mdl-textfield__label" for="ddquad">Dip/Dip Qudrant Notation</label>
+                        <label class="mdl-textfield__label" for="ddquad" id="dipdipquadlabel">Dip/Dip Qudrant Notation</label>
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input" type="text" id="ddazu">
-                        <label class="mdl-textfield__label" for="ddquad">Dip/Dip Qudrant Notation</label>
+                        <label class="mdl-textfield__label" for="ddquad" id="ddazulabel">Dip/Dip Qudrant Notation</label>
                     </div>
 
                     <center>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="check()">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick= "check()">
                             Submit
                         </button>
                     </center>
@@ -64,115 +116,94 @@
                 <center> <canvas width="300" height="300" id="my_Canvas"></canvas></center>
 
 
-
-                
-
             </div>
+
+
         </div>
+
+
+
+
+
     </div>
-
-
-
     <div class="mdl-tabs__panel" id="lannisters-panel">
         @*<section class="mdl-layout__tab-panel" id="fixed-tab-2">*@
-        <div class="page-content">
+            <div class="page-content">
 
-            <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+                <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
 
-            <style type="text/css">
-                div {
-                    padding: 8px;
-                }
-            </style>
-
-
-
-            <h3>Type 2 Problems</h3>
-            <script type="text/javascript">
-
-                $(document).ready(function () {
-
-                    var counter = 2;
-
-                    $("#addButton").click(function () {
-
-                        if (counter > 10) {
-                            alert("Only 10 textboxes allow");
-                            return false;
-                        }
-
-                        var newTextBoxDiv = $(document.createElement('div'))
-                             .attr("id", 'TextBoxDiv' + counter);
-
-                        newTextBoxDiv.after().html('<label>Direction ' + counter + ' : </label>' +
-                              '<input type="text" name="textbox' + counter +
-                              '" id="textbox' + counter + '" value="" >');
-
-                        newTextBoxDiv.appendTo("#TextBoxesGroup");
+                <style type="text/css">
+                    div {
+                        padding: 8px;
+                    }
+                </style>
 
 
-                        counter++;
-                    });
 
-                    $("#removeButton").click(function () {
-                        if (counter == 1) {
-                            alert("No more directions to remove");
-                            return false;
-                        }
+                <h3>Type 2 Problems</h3>
 
-                        counter--;
+                <script type="text/javascript">
 
-                        $("#TextBoxDiv" + counter).remove();
+$(document).ready(function(){
 
-                    });
+    var counter = 2;
 
-                    $("#getButtonValue").click(function () {
+    $("#addButton").click(function () {
 
-                        var msg = '';
-                        for (i = 1; i < counter; i++) {
-                            msg += "\n Direction" + i + " : " + $('#textbox' + i).val();
-                        }
-                        alert(msg);
+	if(counter>10){
+            alert("Only 10 textboxes allow");
+            return false;
+	}
 
-                    });
-                });
-            </script>
+	var newTextBoxDiv = $(document.createElement('div'))
+	     .attr("id", 'TextBoxDiv' + counter);
+
+	newTextBoxDiv.after().html('<label>Direction '+ counter + ' : </label>' +
+	      '<input type="text" name="textbox' + counter +
+	      '" id="textbox' + counter + '" value="" >');
+
+	newTextBoxDiv.appendTo("#TextBoxesGroup");
 
 
-            <div id='TextBoxesGroup'>
-                <div id="TextBoxDiv1">
-                    <label>Direction 1 :  </label><input type="text" id='textbox1'>
-                    <input type='button' value='+' id='addButton'>
-                    <input type='button' value='-' id='removeButton'>
+	counter++;
+     });
 
+     $("#removeButton").click(function () {
+	if(counter==1){
+          alert("No more directions to remove");
+          return false;
+       }
+
+	counter--;
+
+        $("#TextBoxDiv" + counter).remove();
+
+     });
+
+     $("#getButtonValue").click(function () {
+
+	var msg = '';
+	for(i=1; i<counter; i++){
+   	  msg += "\n Direction" + i + " : " + $('#textbox' + i).val();
+	}
+	alert(msg);
+
+     });
+  });
+                </script>
+
+
+                <div id='TextBoxesGroup'>
+                    <div id="TextBoxDiv1">
+                        <label>Direction 1 :  </label><input type='textbox' id='textbox1'>
+                        <input type='button' value='+' id='addButton'>
+                        <input type='button' value='-' id='removeButton'>
+
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-      
-
-
-
-
-
-   
-    
    
 
