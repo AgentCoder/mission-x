@@ -14,6 +14,7 @@ function quadrantToAzimuth(x) {
     if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "E") {
         generatedValue = val;
         angle = 90 - Number(generatedValue);
+        generatedValue = "0" + val;
     }
     else if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "W") {
         generatedValue = 360 - Number(val);

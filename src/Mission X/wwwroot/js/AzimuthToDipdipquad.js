@@ -5,6 +5,7 @@
     var angle = 0;
     if (azimuth > 0 && azimuth < 90) {
         angle = azimuth;
+        
     }
     else if (azimuth > 90 && azimuth < 180) {
         angle = azimuth - 90;
