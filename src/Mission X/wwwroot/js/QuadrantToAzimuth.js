@@ -7,6 +7,9 @@
 function quadrantToAzimuth(x) {
    
     var quadNot = x;
+
+   
+
     var val = Number(quadNot.slice(1, 3));
     var generatedValue = 0;
     var angle = 0;
@@ -40,13 +43,14 @@ function quadrantToAzimuth(x) {
     
 }
 
-function generateFigure(angle)
-{
+
+
+function generateFigure(angle) {
     var radians = Number(angle) * (Math.PI / 180);
     var y_cordinate = Math.sin(radians);
     var x_cordinate = Math.cos(radians);
-      
-   
+
+
     var canvas = document.getElementById('my_Canvas');
     var gl = canvas.getContext('experimental-webgl');
 
@@ -61,7 +65,7 @@ function generateFigure(angle)
        x_cordinate, y_cordinate, 0,
        0.0, 0.0, 0,
        -x_cordinate, -y_cordinate, 0,
-       0.0,0.0,0
+       0.0, 0.0, 0
     ]
 
     // Create an empty buffer object
@@ -160,8 +164,10 @@ function generateFigure(angle)
 
 
 
-     
+
 }
+
+
 
 
 
