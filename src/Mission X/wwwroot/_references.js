@@ -4,6 +4,7 @@
 /// <reference path="js/check.js" />
 /// <reference path="js/ddquadtoddazu.js" />
 /// <reference path="js/dipdipazimuthtoquadrant.js" />
+/// <reference path="js/figure.js" />
 /// <reference path="js/quadranttoazimuth.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
