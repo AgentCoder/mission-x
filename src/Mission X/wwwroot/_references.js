@@ -1,5 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="../gulpfile.js" />
+/// <reference path="js/3pointvalid.js" />
 /// <reference path="js/azimuthtodipdipquad.js" />
 /// <reference path="js/check.js" />
 /// <reference path="js/ddquadtoddazu.js" />
