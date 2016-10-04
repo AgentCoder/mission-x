@@ -10,7 +10,7 @@ Requirements management:  Preethi Gangireddy, Shravya Channamadhavuni
 Data management:  Deepak Ratna Meher Atmuri, 
 Issues management: Tarakesh Gogi, Shravya Lankapalli
 Quality and testing management:  Surya Sai Karthik Kuppili, Krishna Kishore Jujjavarapu
-Communications and documentation management: Sai Theja Gandham, Shravya Channamadhavuni
+Communications and documentation management: Shasi Teja Gandham, Shravya Channamadhavuni
  Week 2 and Week 3
 
 Working on Attitude problems (8 hrs)
