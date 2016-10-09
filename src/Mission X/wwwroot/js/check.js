@@ -65,6 +65,7 @@ function quadtoazu(x) {
     if (x.length == 10) {
 
 
+
         document.getElementById('quadinfo').style.visibility = "hidden";
         var azimuth = quadrantToAzimuth(x);
         var dipdipquadrant = azimuthToDipQuad(azimuth);

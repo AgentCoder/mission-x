@@ -12,33 +12,38 @@ function quadrantToAzimuth(x) {
 
     var val = Number(quadNot.slice(1, 3));
     var generatedValue = 0;
-    var angle = 0;
+    var strikeangle = 0;
+    var dipdirection = "";
 
     if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "E") {
         generatedValue = val;
-        angle = 90 - Number(generatedValue);
+        strikeangle = 90 - Number(generatedValue);
         generatedValue = "0" + val;
+        dipdirection = "NE";
     }
     else if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "W") {
         generatedValue = 360 - Number(val);
-        angle = 90 + Number(val);
+        strikeangle = 90 + Number(val);
+        dipdirection = "NW";
 
     }
     else if (quadNot.charAt(0) == "S" && quadNot.charAt(3) == "E") {
 
         generatedValue = 180 - Number(val);
-        angle = 270 + Number(generatedValue);
+        strikeangle = 270 + Number(generatedValue);
+        dipdirection = "SE";
     }
     else if (quadNot.charAt(0) == "S" && quadNot.charAt(3) == "W") {
         generatedValue = 180 + Number(val);
-        angle = 270 - Number(generatedValue);
+        strikeangle = 270 - Number(generatedValue);
+        dipdirection = "SW";
     }
     //window.alert(angle);
     
     
     // window.alert(generatedValue + quadNot.substr(4));
 
-    generateFigure(angle);
+    generateFigure(strikeangle, dipdirection);
 
     return generatedValue + quadNot.substr(4);
     
@@ -46,11 +51,34 @@ function quadrantToAzimuth(x) {
 
 
 
-function generateFigure(angle) {
+function generateFigure(angle, dipdirection) {
     var radians = Number(angle) * (Math.PI / 180);
     var y_cordinate = Math.sin(radians);
     var x_cordinate = Math.cos(radians);
+    var x_dippoint = 0.0;
+    var y_dippoint = 0.0;
+        if(dipdirection == "NE")
+    {
+            x_dippoint = 0.1;
+            y_dippoint = 0.1;
+    }
 
+        else if (dipdirection == "NW")
+        {
+            x_dippoint = -0.1;
+            y_dippoint = 0.1;
+        }
+        else if (dipdirection == "SW") {
+            x_dippoint = -0.1;
+            y_dippoint = -0.1;
+        }
+        else if (dipdirection == "SE") {
+            x_dippoint = 0.1;
+            y_dippoint = -0.1;
+        }
+        else {
+            window.alert("invalid dipdirection");
+        }
 
     var canvas = document.getElementById('my_Canvas');
     var gl = canvas.getContext('experimental-webgl');
@@ -66,7 +94,11 @@ function generateFigure(angle) {
        x_cordinate, y_cordinate, 0,
        0.0, 0.0, 0,
        -x_cordinate, -y_cordinate, 0,
-       0.0, 0.0, 0
+       0.0, 0.0, 0,
+       x_cordinate - 0.4, y_cordinate - 0.4, 0,
+       -x_cordinate + 0.4, -y_cordinate + 0.4, 0,
+       x_dippoint, y_dippoint, 0
+
     ]
 
     // Create an empty buffer object
@@ -161,6 +193,7 @@ function generateFigure(angle) {
     // Draw the triangle
     gl.drawArrays(gl.LINES, 0, 4);
     gl.drawArrays(gl.LINES, 4, 4);
+   gl.drawArrays(gl.TRIANGLE_STRIP,8,3);
 
 
 
