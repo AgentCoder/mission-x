@@ -93,6 +93,17 @@ function azutoddquad(x) {
 
 
         document.getElementById('azuinfo').style.visibility = "hidden";
+        var dipdipquadrant = azimuthToDipQuad(x);
+        var dipdipazimuth = dipDipQuadrantToDipDipAzimuth(dipdipquadrant);
+        var qu = dipDipAzimuthToQuadrant(dipdipazimuth);
+
+        
+        $(dipdipquadlabel).hide();
+        $(ddquad).val(dipdipquadrant);
+        $(ddazulabel).hide();
+        $(ddazu).val(dipdipazimuth);
+        $(quadrantlabel).hide();
+        $(quadrant1).val(qu);
         
 
     }
@@ -115,6 +126,17 @@ function ddquadtoddazu(x) {
 
 
         document.getElementById('ddquadinfo').style.visibility = "hidden";
+        var dipdipazimuth = dipDipQuadrantToDipDipAzimuth(x);
+        var qu = dipDipAzimuthToQuadrant(dipdipazimuth);
+        var az = quadrantToAzimuth(qu);
+
+        $(ddazulabel).hide();
+        $(ddazu).val(dipdipazimuth);
+        $(quadrantlabel).hide();
+        $(quadrant1).val(qu);
+        $(azimuthlabel).hide();
+        $(azimuthal).val(az);
+
 
 
     }
@@ -139,6 +161,15 @@ function ddazutoquad(x) {
 
 
         document.getElementById('ddazuinfo').style.visibility = "hidden";
+        var qu = dipDipAzimuthToQuadrant(x);
+        var az = quadrantToAzimuth(qu);
+        var dipqu = azimuthToDipQuad(az);
+        $(quadrantlabel).hide();
+        $(quadrant1).val(qu);
+        $(azimuthlabel).hide();
+        $(azimuthal).val(az);
+        $(dipdipquadlabel).hide();
+        $(ddquad).val(dipqu);
 
 
     }
