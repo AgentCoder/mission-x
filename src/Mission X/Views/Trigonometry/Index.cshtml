@@ -4,306 +4,456 @@
 @{
 }
 
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#starks-panel" class="mdl-tabs__tab is-active">Simple problems</a>
+        <a href="#lannisters-panel" class="mdl-tabs__tab">Complex</a>
 
-<div class="panel panel-success">
-
-    <div class="mdl-card__title">
-        <div class="mdl-card__title-text">Trigonometric Problems</div>
     </div>
 
-    <div class="mdl-card__supporting-text"><h4>Please enter the respective values</h4></div>
+    <div class="mdl-tabs__panel is-active" id="starks-panel">
 
-    <div class="mdl-card__actions mdl-card--border">
-  
+        <div class="panel panel-success">
+
+            <div class="mdl-card__title">
+                <div class="mdl-card__title-text">Simple Plan View Problems</div>
+            </div>
+
+            <div class="mdl-card__supporting-text"><h4>Please enter the respective notation to get the equivalent notations.</h4></div>
 
 
-        <div class="col-sm-12">
-            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" onclick="option1()" checked>
-                <span class="mdl-radio__label">only sides</span>
-            </label>
-            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" onclick="option2()">
-                <span class="mdl-radio__label">only angles</span>
-            </label>
-            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" onclick="option3()">
-                <span class="mdl-radio__label">Finding sides using sides and angles</span>
-            </label>
-            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" onclick="option4()">
-                <span class="mdl-radio__label">Finding angles using sides and angles</span>
-            </label>
-        </div>
 
-        <form>
-            <br />
-            <br>
-            
-
-            <div class="container text-center">
-                <div class="col-sm-3">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant1" name="quadrant1">
-                        <label class="mdl-textfield__label" for="quadrant1">Enter a value</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant2">
-                        <label class="mdl-textfield__label" for="quadrant2">Enter b value</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant3">
-                        <label class="mdl-textfield__label" for="quadrant3">Enter c value</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant4">
-                        <label class="mdl-textfield__label" for="quadrant4">Enter angle A</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant6">
-                        <label class="mdl-textfield__label" for="quadrant6">Enter angle C</label>
-                    </div>
-                </div>
-                <div class="col-sm-3"></div>
-                <div class="col-sm-3">
-                    <div class="mdl-card__title-text">Graphical Orientation </div>
-
-                    <img src="~/images/Triangle.png" />
-                </div>
+            @*radio buttons*@
+            <div class="col-sm-12">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                    <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" onclick="option1()" checked>
+                    <span class="mdl-radio__label">only sides</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                    <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" onclick="option2()">
+                    <span class="mdl-radio__label">only angles</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                    <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" onclick="option3()">
+                    <span class="mdl-radio__label">Finding sides using sides and angles</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                    <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" onclick="option4()">
+                    <span class="mdl-radio__label">Finding angles using sides</span>
+                </label>
             </div>
 
 
 
 
 
-            <center>
-                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
-                    Submit
-                </button>
-            </center>
-            <script>
-                function option1() {
-                    document.getElementById("quadrant1").disabled = false
-                    document.getElementById("quadrant2").disabled = false
-                    document.getElementById("quadrant3").disabled = false
-                    document.getElementById("quadrant4").disabled = true;
-                    document.getElementById("quadrant6").disabled = true;
-
-                }
-                function option2() {
-                    document.getElementById("quadrant4").disabled = false;
-                    document.getElementById("quadrant6").disabled = false;
-                    document.getElementById("quadrant1").disabled = true;
-                    document.getElementById("quadrant2").disabled = true;
-                    document.getElementById("quadrant3").disabled = true;
-                    
-
-                }
-                function option3() {
-                    document.getElementById("quadrant1").disabled = false
-                    document.getElementById("quadrant2").disabled = false
-                    document.getElementById("quadrant3").disabled = false
-                    document.getElementById("quadrant4").disabled = false;
-                    document.getElementById("quadrant6").disabled = false;
-                }
-                function option4() {
-                    document.getElementById("quadrant1").disabled = false
-                    document.getElementById("quadrant2").disabled = false
-                    document.getElementById("quadrant3").disabled = false
-                    document.getElementById("quadrant4").disabled = false;
-                    document.getElementById("quadrant6").disabled = false;
-
-                }
+            <div class="mdl-card__actions mdl-card--border">
 
 
+                <form action="#">
+                    <br />
+                    <br>
 
-                    function myFunction() {
+                    <div class="container text-center">
+                        <div class="col-sm-3">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="quadrant1" name="quadrant1">
+                                <label class="mdl-textfield__label" for="quadrant1">Enter a value</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="quadrant2">
+                                <label class="mdl-textfield__label" for="quadrant2">Enter b value</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="quadrant3">
+                                <label class="mdl-textfield__label" for="quadrant3">Enter c value</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="quadrant4">
+                                <label class="mdl-textfield__label" for="quadrant4">Enter angle A</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="quadrant6">
+                                <label class="mdl-textfield__label" for="quadrant6">Enter angle C</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3">
+                            <div class="mdl-card__title-text">Graphical Orientation </div>
 
-
-                        var a = document.getElementById("quadrant1").value;
-                        var b = document.getElementById("quadrant2").value;
-                        var c = document.getElementById("quadrant3").value;
-                        var La = document.getElementById("quadrant4").value;
-                        var Lc = document.getElementById("quadrant6").value;
-                        
-
-
-                        // only sides
-                        if (document.getElementById("option-1").checked) {
-                            
-                            if (a == 0 && b > 0 && c > 0) {
-                                document.getElementById("quadrant1").value = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(c) * parseFloat(c))));
-                            }
-                            else if (b == 0 && a > 0 && c > 0) {
-                                document.getElementById("quadrant2").value = Math.sqrt(parseFloat((parseFloat(a) * parseFloat(a)) + (parseFloat(c) * parseFloat(c))));
-                            }
-                            else if (c == 0 && a > 0 && b > 0) {
-                                document.getElementById("quadrant3").value = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(a) * parseFloat(a))));
-                            }
-                        }
+                            <img src="~/images/Triangle.png" />
+                        </div>
+                    </div>
 
 
 
 
 
-                        //only angles
-                        else if (document.getElementById("option-2").checked) {
-                            if (La == 0  && Lc > 0) {
+                    <center>
+                        <button type="button" id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
+                            Submit
+                        </button>
+                    </center>
 
-                                document.getElementById("quadrant4").value = 180 - (90 + parseFloat(Lc));
-
-                            }
-
-                            else if (Lc == 0 && La > 0 ) {
-                                document.getElementById("quadrant6").value = 180 - (90 + parseFloat(La));
-
-                            }
-
-                        }
-
-
-                        // angles and sides
-                        else if (document.getElementById("option-3").checked) {
-                            if (La > 0) {
-
-                                if (c == 0) {
-                                    // c
-                                    if (b > 0 && a == 0) {
-                                        document.getElementById("quadrant3").value = Math.round(parseFloat(b) * Math.cos(parseFloat(La) * 0.0174533));
-                                    }
-                                    else if (a > 0) {
-                                        document.getElementById("quadrant3").value = Math.round(parseFloat(a) / Math.tan(parseFloat(La) * 0.0174533));
-
-                                    }
-                                }
-                                else if (a == 0) {
-                                    //a
-                                    if (c > 0) {
-                                        document.getElementById("quadrant1").value = Math.round(parseFloat(c) * Math.tan(parseFloat(La) * 0.0174533));
-                                    }
-                                    else if (b > 0) {
-
-                                        document.getElementById("quadrant1").value = Math.round(parseFloat(b) * Math.sin(parseFloat(La) * 0.0174533));
-                                    }
-                                }
-                                else if (b == 0) {
-                                    // b
-                                    if (a > 0)
-                                    {
-                                        document.getElementById("quadrant2").value = Math.round(parseFloat(a) / Math.sin(parseFloat(La) * 0.0174533));
-                                    }
-                                    else if (c > 0)
-                                    {
-                                        document.getElementById("quadrant2").value = Math.round(parseFloat(c) * Math.cos(parseFloat(La) * 0.0174533));
-
-                                    }
-                                }
-                                else
-                                {
-                                    alert("enter input");
-                                }
-                            }
-                            else if (Lc > 0) {
+                </form>
+                <br />
+                <br />
 
 
 
-                                if (c == 0) {
-                                    // c
-                                    if (b > 0 && a == 0) {
-                                        document.getElementById("quadrant3").value = Math.round(parseFloat(b) * Math.cos(parseFloat(Lc) * 0.0174533));
-                                    }
-                                    else if (a > 0) {
-                                        document.getElementById("quadrant3").value = Math.round(parseFloat(a) * Math.tan(parseFloat(Lc) * 0.0174533));
-
-                                    }
-                                }
-                                else if (a == 0) {
-                                    //a
-                                    if (c > 0) {
-                                        document.getElementById("quadrant1").value = Math.round(parseFloat(c) / Math.tan(parseFloat(Lc) * 0.0174533));
-                                    }
-                                    else if (b > 0) {
-
-                                        document.getElementById("quadrant1").value = Math.round(parseFloat(b) * Math.cos(parseFloat(Lc) * 0.0174533));
-                                    }
-                                }
-                                else if (b == 0) {
-                                    // b
-                                    if (a > 0) {
-                                        document.getElementById("quadrant2").value = Math.round(parseFloat(a) / Math.cos(parseFloat(Lc) * 0.0174533));
-                                    }
-                                    else if (c > 0) {
-                                        document.getElementById("quadrant2").value = Math.round(parseFloat(c) / Math.sin(parseFloat(Lc) * 0.0174533));
-
-                                    }
-                                }
-                                else {
-                                    alert("enter input");
-
-                                }
-                            }
-
-                        }
-
-                        // only angles using sides
-                        else if (document.getElementById("option-4").checked) {
-                            if (Lc == 0) {
-
-                                if (a == 0 && b > 0 && c > 0) {
-                                    document.getElementById("quadrant6").value = Math.round
-                                    (Math.asin(parseFloat(c) / parseFloat(b)) * 57.298);
-
-                                }
-                                else if (a > 0 && b == 0 && c > 0) {
-                                    document.getElementById("quadrant6").value = Math.round(Math.atan(parseFloat(c) / parseFloat(a)) * 57.298);
-
-                                }
-                                else if (a > 0 && b > 0 && c == 0) {
-                                    document.getElementById("quadrant6").value = Math.round(Math.acos(parseFloat(a) / parseFloat(b)) * 57.298);
-
-                                }
-                            }
-                            else if (La == 0)
-                            {
-                                if (a == 0 && b > 0 && c > 0) {
-                                    document.getElementById("quadrant4").value = Math.round
-                                    (Math.acos(parseFloat(c) / parseFloat(b)) * 57.298);
-
-                                }
-                                else if (a > 0 && b == 0 && c > 0) {
-                                    document.getElementById("quadrant4").value = Math.round(Math.atan(parseFloat(a) / parseFloat(c)) * 57.298);
-
-                                }
-                                else if (a > 0 && b > 0 && c == 0) {
-                                    document.getElementById("quadrant4").value = Math.round(Math.asin(parseFloat(a) / parseFloat(b)) * 57.298);
-
-                                }
-
-                            }
-                        }
-                        else
-                        {
-                            alert("Please select the correct combination and enter your inputs");
-
-                        }
-
-                    }
-            </script>
 
 
-        </form>
-        <br />
-        <br />
+            </div>
+
+
+        </div>
+
+
+
 
 
     </div>
 
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+        function option1() {
+            document.getElementById("quadrant1").disabled = false;
+            document.getElementById("quadrant2").disabled = false;
+            document.getElementById("quadrant3").disabled = false;
+            document.getElementById("quadrant4").disabled = true;
+            document.getElementById("quadrant6").disabled = true;
+
+        }
+        function option2() {
+            document.getElementById("quadrant4").disabled = false;
+            document.getElementById("quadrant6").disabled = false;
+            document.getElementById("quadrant1").disabled = true;
+            document.getElementById("quadrant2").disabled = true;
+            document.getElementById("quadrant3").disabled = true;
+
+
+        }
+        function option3() {
+            document.getElementById("quadrant1").disabled = false;
+            document.getElementById("quadrant2").disabled = false;
+            document.getElementById("quadrant3").disabled = false;
+            document.getElementById("quadrant4").disabled = false;
+            document.getElementById("quadrant6").disabled = false;
+        }
+        function option4() {
+            document.getElementById("quadrant1").disabled = false;
+            document.getElementById("quadrant2").disabled = false;
+            document.getElementById("quadrant3").disabled = false;
+            document.getElementById("quadrant4").disabled = false;
+            document.getElementById("quadrant6").disabled = false;
+
+        }
+
+
+
+        function myFunction() {
+
+
+            var a = document.getElementById("quadrant1").value;
+            var b = document.getElementById("quadrant2").value;
+            var c = document.getElementById("quadrant3").value;
+            var La = document.getElementById("quadrant4").value;
+            var Lc = document.getElementById("quadrant6").value;
+
+
+
+            // only sides
+            if (document.getElementById("option-1").checked) {
+
+                if (a == 0 && b > 0 && c > 0) {
+
+                    if (b > c) {
+                        document.getElementById("quadrant1").value = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(c) * parseFloat(c))));
+                    }
+                    else {
+                        alert("hypotenuse is the largest side so b should be greater than other value");
+
+                    }
+                }
+                else if (b == 0 && a > 0 && c > 0) {
+                    document.getElementById("quadrant2").value = Math.sqrt(parseFloat((parseFloat(a) * parseFloat(a)) + (parseFloat(c) * parseFloat(c))));
+                }
+                else if (c == 0 && a > 0 && b > 0) {
+                    if (b > a) {
+                        document.getElementById("quadrant3").value = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(a) * parseFloat(a))));
+                    }
+                    else {
+                        alert("hypotenuse is the largest side so b should be greater than other value");
+
+
+                    }
+                }
+                else {
+                    alert("enter valid input  and please do check it again");
+
+                }
+
+            }
+
+
+
+
+
+                //only angles
+            else if (document.getElementById("option-2").checked) {
+                if (La == 0 && Lc > 0) {
+                    if (Lc < 90) {
+                        document.getElementById("quadrant4").value = 180 - (90 + parseFloat(Lc));
+                    }
+                    else {
+                        alert("Any of the angles in the triangle should not be zero or undefined");
+
+                    }
+
+                }
+
+                else if (Lc == 0 && La > 0) {
+                    if (La < 90) {
+                        document.getElementById("quadrant6").value = 180 - (90 + parseFloat(La));
+                    }
+                    else {
+                        alert("Any of the angles in the triangle should not be zero or undefined");
+
+                    }
+
+                }
+                else {
+                    alert("please enter valid input");
+
+                }
+
+            }
+
+
+                // angles and sides
+            else if (document.getElementById("option-3").checked) {
+                if (La > 0) {
+
+                    if (c == 0) {
+                        // c
+                        if (b > 0 && a == 0) {
+                            document.getElementById("quadrant3").value = Math.round(parseFloat(b) * Math.cos(parseFloat(La) * 0.0174533));
+                        }
+                        else if (a > 0) {
+                            document.getElementById("quadrant3").value = Math.round(parseFloat(a) / Math.tan(parseFloat(La) * 0.0174533));
+
+                        }
+                        else {
+                            alert("Enter the valid input");
+
+                        }
+                    }
+                    else if (a == 0) {
+                        //a
+                        if (c > 0) {
+                            document.getElementById("quadrant1").value = Math.round(parseFloat(c) * Math.tan(parseFloat(La) * 0.0174533));
+                        }
+                        else if (b > 0) {
+
+                            document.getElementById("quadrant1").value = Math.round(parseFloat(b) * Math.sin(parseFloat(La) * 0.0174533));
+                        }
+                        else {
+                            alert("Enter the valid input");
+
+                        }
+                    }
+                    else if (b == 0) {
+                        // b
+                        if (a > 0) {
+                            document.getElementById("quadrant2").value = Math.round(parseFloat(a) / Math.sin(parseFloat(La) * 0.0174533));
+                        }
+                        else if (c > 0) {
+                            document.getElementById("quadrant2").value = Math.round(parseFloat(c) * Math.cos(parseFloat(La) * 0.0174533));
+
+                        }
+                        else {
+                            alert("Enter the valid input");
+
+                        }
+                    }
+                    else {
+                        alert("please enter valid input");
+
+                    }
+
+                }
+                else if (Lc > 0) {
+
+
+
+                    if (c == 0) {
+                        // c
+                        if (b > 0 && a == 0) {
+                            document.getElementById("quadrant3").value = Math.round(parseFloat(b) * Math.sin(parseFloat(Lc) * 0.0174533));
+                        }
+                        else if (a > 0) {
+                            document.getElementById("quadrant3").value = Math.round(parseFloat(a) * Math.tan(parseFloat(Lc) * 0.0174533));
+
+                        }
+                        else {
+                            alert("Enter the valid input");
+
+                        }
+                    }
+                    else if (a == 0) {
+                        //a
+                        if (c > 0) {
+                            document.getElementById("quadrant1").value = Math.round(parseFloat(c) / Math.tan(parseFloat(Lc) * 0.0174533));
+                        }
+                        else if (b > 0) {
+
+                            document.getElementById("quadrant1").value = Math.round(parseFloat(b) * Math.cos(parseFloat(Lc) * 0.0174533));
+                        }
+                        else {
+                            alert("Enter the valid input");
+
+                        }
+                    }
+                    else if (b == 0) {
+                        // b
+                        if (a > 0) {
+                            document.getElementById("quadrant2").value = Math.round(parseFloat(a) / Math.cos(parseFloat(Lc) * 0.0174533));
+                        }
+                        else if (c > 0) {
+                            document.getElementById("quadrant2").value = Math.round(parseFloat(c) / Math.sin(parseFloat(Lc) * 0.0174533));
+
+                        }
+                        else {
+                            alert("Enter the valid input");
+
+                        }
+                    }
+                    else {
+                        alert("please enter valid input");
+
+                    }
+                }
+
+            }
+
+                // only angles using sides
+            else if (document.getElementById("option-4").checked) {
+
+                var value = window.prompt("Please enter  which angle to find either LA or LC (either enter LC or C)");
+
+                if (value != null) {
+                    if (Lc == 0 && (value == "LC" || value.toLowerCase() == "c")) {
+
+                        if (a == 0 && b > 0 && c > 0) {
+                            if (b > c) {
+                                document.getElementById("quadrant6").value = Math.round
+                                (Math.asin(parseFloat(c) / parseFloat(b)) * 57.298);
+                            }
+                            else {
+                                alert("hypotenuse is the largest side so b should be greater than other value");
+
+                            }
+
+                        }
+                        else if (a > 0 && b == 0 && c > 0) {
+                            document.getElementById("quadrant6").value = Math.round(Math.atan(parseFloat(c) / parseFloat(a)) * 57.298);
+
+                        }
+                        else if (a > 0 && b > 0 && c == 0) {
+                            if (b > a) {
+                                document.getElementById("quadrant6").value = Math.round(Math.acos(parseFloat(a) / parseFloat(b)) * 57.298);
+                            }
+                            else {
+                                alert("hypotenuse is the largest side so b should be greater than other value");
+
+                            }
+                        }
+                        else {
+                            alert("Enter valid input");
+
+                        }
+                    }
+                    else if (La == 0 && (value == "LA" || value.toLowerCase() == "a")) {
+                        if (a == 0 && b > 0 && c > 0) {
+                            if (b > c) {
+                                document.getElementById("quadrant4").value = Math.round
+                                (Math.acos(parseFloat(c) / parseFloat(b)) * 57.298);
+                            }
+                            else {
+                                alert("hypotenuse is the largest side so b should be greater than other value");
+
+                            }
+
+                        }
+                        else if (a > 0 && b == 0 && c > 0) {
+                            document.getElementById("quadrant4").value = Math.round(Math.atan(parseFloat(a) / parseFloat(c)) * 57.298);
+
+                        }
+                        else if (a > 0 && b > 0 && c == 0) {
+                            if (b > a) {
+                                document.getElementById("quadrant4").value = Math.round(Math.asin(parseFloat(a) / parseFloat(b)) * 57.298);
+                            }
+                            else {
+                                alert("hypotenuse is the largest side so b should be greater than other value");
+
+                            }
+                        }
+                        else {
+                            alert("enter valid input");
+
+                        }
+
+                    }
+                }
+                else {
+                    alert("please recheck and follow the notation like either LC or C");
+
+                }
+            }
+            else {
+                alert("please enter valid input");
+
+            }
+
+        }
+    </script>
+
+    <div class="mdl-tabs__panel" id="lannisters-panel">
+        @*<section class="mdl-layout__tab-panel" id="fixed-tab-2">*@
+        <div class="page-content">
+
+
+
+
+
+
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
