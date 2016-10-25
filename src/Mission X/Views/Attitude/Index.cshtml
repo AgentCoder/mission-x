@@ -1,13 +1,29 @@
 ﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@* START OF SIMPLE PLAN VIEW PAGE *@
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+
+    @* CODE FOR TABS FOR WITH AND WITHOUT SYMBOLS *@
     <div class="mdl-tabs__tab-bar">
         <a href="#starks-panel" class="mdl-tabs__tab is-active">with symbols</a>
         <a href="#lannisters-panel" class="mdl-tabs__tab">without symbols</a>
         
     </div>
 
+    @* END OF CODE FOR TABS - WITH AND WITHOUT SYMBOLS *@
+
+    @* START OF WITH SYMBOLS TAB *@
     <div class="mdl-tabs__panel is-active" id="starks-panel">
         
+
+        @* START OF THE BODY OF THE PAGE - WITH SYMBOLS PAGE *@
+
         <div class="panel panel-success">
 
             <div class="mdl-card__title">
@@ -19,88 +35,128 @@
             <div class="mdl-card__actions mdl-card--border">
 
 
-                <form action="#">
-                    <br />
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="quadrant1" oninput="quadtoazu(this.value)">
-                        <label class="mdl-textfield__label" for="quadrant" id="quadrantlabel">Quadrant Notation</label>
-                    </div>
-                    
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="azimuthal" oninput="azutoddquad(this.value)">
-                        <label class="mdl-textfield__label" for="azimuthal" id="azimuthlabel">Azimuthal Notation</label>
-                    </div>
+                @* TABLE FOR ALIGNMENT OF THE FORM AND GRAPHICAL ORIENTATION *@
 
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input display-4" type="text" id="ddquad" oninput="ddquadtoddazu(this.value)">
-                        <label class="mdl-textfield__label" for="ddquad" id="dipdipquadlabel">Dip/Dip Qudrant Notation</label>
-                    </div>
 
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="ddazu" oninput="ddazutoquad(this.value)">
-                        <label class="mdl-textfield__label" for="ddquad" id="ddazulabel">Dip/Dip Azimuthal Notation</label>
-                    </div>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-1">
-                        <input type="radio" id="sex-option-1" class="mdl-radio__button" name="sex-options" value="1">
-                        <span class="mdl-radio__label">Fault Plane</span>
-                    </label>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
+                <table id="alignTable">
 
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-1">
-                        <input type="radio" id="sex-option-1" class="mdl-radio__button" name="sex-options" value="1">
-                        <span class="mdl-radio__label">Sedementary strata</span>
-                    </label>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-1">
-                        <input type="radio" id="sex-option-1" class="mdl-radio__button" name="sex-options" value="1">
-                        <span class="mdl-radio__label">Metamorphic Foliation</span>
-                    </label>
-                    <div>
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-1">
-                            <input type="radio" id="sex-option-1" class="mdl-radio__button" name="sex-options" value="1">
-                            <span class="mdl-radio__label">Joint</span>
-                        </label>
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sex-option-1">
-                            <input type="radio" id="sex-option-1" class="mdl-radio__button" name="sex-options" value="1">
-                            <span class="mdl-radio__label">Rock Cleavage</span>
-                        </label>
-                    </div>
-                    <div id="quadinfo" style="color:red"></div>
-                    <div id="azuinfo" style="color:red"></div>
-                    <div id="ddquadinfo" style="color:red"></div>
-                    <div id="ddazuinfo" style="color:red"></div>
-                    <center>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick= "check()">
-                            Submit
-                        </button>
-                    </center>
+                    @* FIRST ROW OF THE TABLE *@
+                    <tr>
 
-                </form>
-                <br />
-                <br />
-                <div class="mdl-card__title-text">Graphical Orientation </div>
-                <br />
-                <br />
-                <center> <canvas width="300" height="300" id="my_Canvas"></canvas></center>
+                        @* FIRST COLOUMN OF THE TABLE *@
+                        <td>
+
+                            <form>
+                                <br />
+                                <br>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="quadrant1" oninput="quadtoazu(this.value)">
+                                    <label class="mdl-textfield__label" for="quadrant" id="quadrantlabel">Quadrant Notation</label>
+                                    
+
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="azimuthal" oninput="azutoddquad(this.value)">
+                                    <label class="mdl-textfield__label" for="azimuthal" id="azimuthlabel">Azimuthal Notation</label>
+                                    
+                                </div>
+                               
+                                
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input display-4" type="text" id="ddquad" oninput="ddquadtoddazu(this.value)">
+                                    <label class="mdl-textfield__label" for="ddquad" id="dipdipquadlabel">Dip/Dip Qudrant Notation</label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="ddazu" oninput="ddazutoquad(this.value)">
+                                    <label class="mdl-textfield__label" for="ddquad" id="ddazulabel">Dip/Dip Azimuthal Notation</label>
+                                </div>
+                                
+                                
+                               
+
+                                <div id="quadinfo" style="color:red"></div>
+                                <div id="azuinfo" style="color:red"></div>
+                                <div id="ddquadinfo" style="color:red"></div>
+                                <div id="ddazuinfo" style="color:red"></div>
+
+
+
+
+                            </form>
+
+                            @* DIVISION FOR RADIO BUTTONS *@
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="r1">
+                                <input type="radio" id="r1" class="mdl-radio__button" name="sex-options" value="1">
+                                <span class="mdl-radio__label">Sedementary strata</span>
+                            </label>
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="r2">
+                                <input type="radio" id="r2" class="mdl-radio__button" name="sex-options" value="1">
+                                <span class="mdl-radio__label">Metamorphic Foliation</span>
+                            </label>
+                            <br />
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="r3">
+                                <input type="radio" id="r3" class="mdl-radio__button" name="sex-options" value="1">
+                                <span class="mdl-radio__label">Joint</span>
+                            </label>
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="r4">
+                                <input type="radio" id="r4" class="mdl-radio__button" name="sex-options" value="1">
+                                <span class="mdl-radio__label">Rock Cleavage</span>
+                            </label>
+
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="r5">
+                                <input type="radio" id="r5" class="mdl-radio__button" name="sex-options" value="1">
+                                <span class="mdl-radio__label">Fault Plane</span>
+                            </label>
+
+                            @* END OF DIVISION FOR RADIO BUTTONS *@
+
+                        </td>
+
+                        @* SECOND COLOUMN OF THE THE TABLE *@
+                        <td>
+
+                            @* START OF GRAPHICAL DIAGRAM OF SIMPLE PLAN VIEW *@
+
+                            <div class="mdl-card__title-text"><u>Graphical Orientation</u> </div>
+                            <br />
+                            <br />
+
+                           
+                            <center> <canvas width="300" height="300" id="my_Canvas"></canvas></center>
+
+                            @* END OF THE GRAPHCIAL DIAGRAM OF SIMPLE PLAN VIEW *@
+
+
+                        </td>
+
+                    </tr>
+
+
+                    @* END THE ALIGNMENT TABLE *@
+
+                </table>
 
 
             </div>
 
+            @* END OF THE BODY OF THE PAGE - WITH SYMBOLS *@
+               </div>
 
+
+        @* END OF WITH SYMBOLS TAB *@
         </div>
 
+   
 
 
-
-
-    </div>
-
-
-
-
-
+    @* START OF WITHOUT SYMBOLS TAB *@
     <div class="mdl-tabs__panel" id="lannisters-panel">
         @*<section class="mdl-layout__tab-panel" id="fixed-tab-2">*@
             <div class="page-content">
@@ -170,7 +226,7 @@ $(document).ready(function(){
 
                 <div id='TextBoxesGroup'>
                     <div id="TextBoxDiv1">
-                        <label>Direction 1 :  </label><input type='textbox' id='textbox1'>
+                        <label>Direction 1 :  </label><input type='text' id='textbox1'>
                         <input type='button' value='+' id='addButton'>
                         <input type='button' value='-' id='removeButton'>
 
@@ -179,6 +235,15 @@ $(document).ready(function(){
 
             </div>
         </div>
+
+    @* END OF WITHOUT SYMBOLS TAB *@
+
+
+
+
+
+
+    @* END OF PAGE - SIMPLE PLAN VIEW *@
     </div>
    
 
