@@ -65,31 +65,31 @@
                         <div class="col-sm-3">
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="quadrant1" name="quadrant1">
-                                <label class="mdl-textfield__label" for="quadrant1">Enter a value</label>
+                                <label class="mdl-textfield__label" for="quadrant1" id="sidea">Enter a value</label>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="quadrant2">
-                                <label class="mdl-textfield__label" for="quadrant2">Enter b value</label>
+                                <label class="mdl-textfield__label" for="quadrant2" id="sideb">Enter b value</label>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="quadrant3">
-                                <label class="mdl-textfield__label" for="quadrant3">Enter c value</label>
+                                <label class="mdl-textfield__label" for="quadrant3" id="sidec">Enter c value</label>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="quadrant4">
-                                <label class="mdl-textfield__label" for="quadrant4">Enter angle A</label>
+                                <label class="mdl-textfield__label" for="quadrant4" id="sideLa">Enter angle A</label>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="quadrant6">
-                                <label class="mdl-textfield__label" for="quadrant6">Enter angle C</label>
+                                <label class="mdl-textfield__label" for="quadrant6" id="sideLc">Enter angle C</label>
                             </div>
                         </div>
                         <div class="col-sm-3"></div>
@@ -361,6 +361,7 @@
                 if (a == 0 && b > 0 && c > 0) {
 
                     if (b > c) {
+                        $(sidea).hide();
                         document.getElementById("quadrant1").value = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(c) * parseFloat(c))));
                     }
                     else {
@@ -369,6 +370,7 @@
                     }
                 }
                 else if (b == 0 && a > 0 && c > 0) {
+                    $(sideb).hide();
                     document.getElementById("quadrant2").value = Math.sqrt(parseFloat((parseFloat(a) * parseFloat(a)) + (parseFloat(c) * parseFloat(c))));
                 }
                 else if (c == 0 && a > 0 && b > 0) {
@@ -396,6 +398,7 @@
             else if (document.getElementById("option-2").checked) {
                 if (La == 0 && Lc > 0) {
                     if (Lc < 90) {
+                        $(sideLc).hide();
                         document.getElementById("quadrant4").value = 180 - (90 + parseFloat(Lc));
                     }
                     else {
@@ -407,6 +410,7 @@
 
                 else if (Lc == 0 && La > 0) {
                     if (La < 90) {
+                        $(sideLa).hide();
                         document.getElementById("quadrant6").value = 180 - (90 + parseFloat(La));
                     }
                     else {
@@ -429,7 +433,9 @@
 
                     if (c == 0) {
                         // c
+
                         if (b > 0 && a == 0) {
+                            $(sidec).hide();
                             document.getElementById("quadrant3").value = Math.round(parseFloat(b) * Math.cos(parseFloat(La) * 0.0174533));
                         }
                         else if (a > 0) {
@@ -444,10 +450,11 @@
                     else if (a == 0) {
                         //a
                         if (c > 0) {
+                            $(sidea).hide();
                             document.getElementById("quadrant1").value = Math.round(parseFloat(c) * Math.tan(parseFloat(La) * 0.0174533));
                         }
                         else if (b > 0) {
-
+                            $(sidea).hide();
                             document.getElementById("quadrant1").value = Math.round(parseFloat(b) * Math.sin(parseFloat(La) * 0.0174533));
                         }
                         else {
@@ -458,9 +465,11 @@
                     else if (b == 0) {
                         // b
                         if (a > 0) {
+                            $(sideb).hide();
                             document.getElementById("quadrant2").value = Math.round(parseFloat(a) / Math.sin(parseFloat(La) * 0.0174533));
                         }
                         else if (c > 0) {
+                            $(sideb).hide();
                             document.getElementById("quadrant2").value = Math.round(parseFloat(c) * Math.cos(parseFloat(La) * 0.0174533));
 
                         }
@@ -482,9 +491,11 @@
                     if (c == 0) {
                         // c
                         if (b > 0 && a == 0) {
+                            $(sidec).hide();
                             document.getElementById("quadrant3").value = Math.round(parseFloat(b) * Math.sin(parseFloat(Lc) * 0.0174533));
                         }
                         else if (a > 0) {
+                            $(sidec).hide();
                             document.getElementById("quadrant3").value = Math.round(parseFloat(a) * Math.tan(parseFloat(Lc) * 0.0174533));
 
                         }
@@ -496,10 +507,11 @@
                     else if (a == 0) {
                         //a
                         if (c > 0) {
+                            $(sidea).hide();
                             document.getElementById("quadrant1").value = Math.round(parseFloat(c) / Math.tan(parseFloat(Lc) * 0.0174533));
                         }
                         else if (b > 0) {
-
+                            $(sidea).hide();
                             document.getElementById("quadrant1").value = Math.round(parseFloat(b) * Math.cos(parseFloat(Lc) * 0.0174533));
                         }
                         else {
@@ -510,9 +522,11 @@
                     else if (b == 0) {
                         // b
                         if (a > 0) {
+                            $(sideb).hide();
                             document.getElementById("quadrant2").value = Math.round(parseFloat(a) / Math.cos(parseFloat(Lc) * 0.0174533));
                         }
                         else if (c > 0) {
+                            $(sideb).hide();
                             document.getElementById("quadrant2").value = Math.round(parseFloat(c) / Math.sin(parseFloat(Lc) * 0.0174533));
 
                         }
@@ -539,6 +553,7 @@
 
                         if (a == 0 && b > 0 && c > 0) {
                             if (b > c) {
+                                $(sideLc).hide();
                                 document.getElementById("quadrant6").value = Math.round
                                 (Math.asin(parseFloat(c) / parseFloat(b)) * 57.298);
                             }
@@ -549,11 +564,13 @@
 
                         }
                         else if (a > 0 && b == 0 && c > 0) {
+                            $(sideLc).hide();
                             document.getElementById("quadrant6").value = Math.round(Math.atan(parseFloat(c) / parseFloat(a)) * 57.298);
 
                         }
                         else if (a > 0 && b > 0 && c == 0) {
                             if (b > a) {
+                                $(sideLc).hide();
                                 document.getElementById("quadrant6").value = Math.round(Math.acos(parseFloat(a) / parseFloat(b)) * 57.298);
                             }
                             else {
@@ -569,6 +586,7 @@
                     else if (La == 0 && (value == "LA" || value.toLowerCase() == "a")) {
                         if (a == 0 && b > 0 && c > 0) {
                             if (b > c) {
+                                $(sideLa).hide();
                                 document.getElementById("quadrant4").value = Math.round
                                 (Math.acos(parseFloat(c) / parseFloat(b)) * 57.298);
                             }
@@ -579,11 +597,13 @@
 
                         }
                         else if (a > 0 && b == 0 && c > 0) {
+                            $(sideLa).hide();
                             document.getElementById("quadrant4").value = Math.round(Math.atan(parseFloat(a) / parseFloat(c)) * 57.298);
 
                         }
                         else if (a > 0 && b > 0 && c == 0) {
                             if (b > a) {
+                                $(sideLa).hide();
                                 document.getElementById("quadrant4").value = Math.round(Math.asin(parseFloat(a) / parseFloat(b)) * 57.298);
                             }
                             else {
