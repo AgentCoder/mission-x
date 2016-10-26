@@ -68,8 +68,12 @@
                     <span class="mdl-layout-title">Visual X</span>
                     <nav class="mdl-navigation">
                         <a asp-controller="Home" asp-action="Index" class="mdl-navigation__link">Home</a>
-                        <a class="mdl-navigation__link" href="">About Visualize X</a>
-                        <a class="mdl-navigation__link" href="">Our Team</a>
+                        <a asp-controller="Trigonometry" asp-action="Index" class="mdl-navigation__link">Trigonometric Problem</a>
+                        <a asp-controller="Attitude" asp-action="Index" class="mdl-navigation__link">Plan View Problem</a>
+                        <a asp-controller="ThreePoint" asp-action="Index" class="mdl-navigation__link">Bore Hole Problem</a>
+                        <a asp-controller="Home" asp-action="About" class="mdl-navigation__link">About Visualize X</a>
+                        <a asp-controller="Home" asp-action="Team" class="mdl-navigation__link">Our Team</a>
+                        <a asp-controller="Home" asp-action="Help" class="mdl-navigation__link">Help</a>
                         
                     </nav>
                 </div>
@@ -96,11 +100,26 @@
             <br />
 
 
-            <hr />
-            <footer>
-                <p>&copy; 2016 - Example</p>
+            
+            
+
+
+            <footer class="mdl-mini-footer">
+
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo"><a asp-controller="Home" asp-action="Index">Visual X</a></div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Team">Team</a></li>
+                        <li><a asp-controller="Home" asp-action="Help">Help</a></li>
+                        <li><a href="https://Pranay_Peddi@bitbucket.org/Pranay_Peddi/mission-x.git">Git Repository</a></li>
+                    </ul>
+                    <p>&copy;2016 - All Copyrights Reserved by Team GeoMinions.</p>
+                </div>
+                
             </footer>
              
+            
         </div>
 
 
