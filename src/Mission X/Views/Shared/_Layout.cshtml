@@ -107,12 +107,12 @@
             <footer class="mdl-mini-footer">
 
                 <div class="mdl-mini-footer__left-section">
-                    <div class="mdl-logo">Home</div>
+                    <div class="mdl-logo"><a asp-controller="Home" asp-action="Index">Visual X</a></div>
                     <ul class="mdl-mini-footer__link-list">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Git Repository</a></li>
+                        <li><a asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Team">Team</a></li>
+                        <li><a asp-controller="Home" asp-action="Help">Help</a></li>
+                        <li><a href="https://Pranay_Peddi@bitbucket.org/Pranay_Peddi/mission-x.git">Git Repository</a></li>
                     </ul>
                     <p>&copy;2016 - All Copyrights Reserved by Team GeoMinions.</p>
                 </div>
