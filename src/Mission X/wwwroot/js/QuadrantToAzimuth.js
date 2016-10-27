@@ -13,30 +13,30 @@ function quadrantToAzimuth(x) {
     var val = Number(quadNot.slice(1, 3));
     var generatedValue = 0;
     var strikeangle = 0;
-    var dipdirection = "";
+    var dipdirection = quadNot.substr(8);
 
     if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "E") {
         generatedValue = val;
         strikeangle = 90 - Number(generatedValue);
         generatedValue = "0" + val;
-        dipdirection = "NE";
+        //dipdirection = "NE";
     }
     else if (quadNot.charAt(0) == "N" && quadNot.charAt(3) == "W") {
         generatedValue = 360 - Number(val);
         strikeangle = 90 + Number(val);
-        dipdirection = "NW";
+        //dipdirection = "NW";
 
     }
     else if (quadNot.charAt(0) == "S" && quadNot.charAt(3) == "E") {
 
         generatedValue = 180 - Number(val);
         strikeangle = 270 + Number(generatedValue);
-        dipdirection = "SE";
+        //dipdirection = "SE";
     }
     else if (quadNot.charAt(0) == "S" && quadNot.charAt(3) == "W") {
         generatedValue = 180 + Number(val);
         strikeangle = 270 - Number(generatedValue);
-        dipdirection = "SW";
+        //dipdirection = "SW";
     }
     //window.alert(angle);
     
@@ -59,22 +59,22 @@ function generateFigure(angle, dipdirection) {
     var y_dippoint = 0.0;
         if(dipdirection == "NE")
     {
-            x_dippoint = 0.1;
-            y_dippoint = 0.1;
+            x_dippoint = 0.2;
+            y_dippoint = -0.2;
     }
 
         else if (dipdirection == "NW")
         {
-            x_dippoint = -0.1;
-            y_dippoint = 0.1;
+            x_dippoint = -0.2;
+            y_dippoint = 0.2;
         }
         else if (dipdirection == "SW") {
-            x_dippoint = -0.1;
-            y_dippoint = -0.1;
+            x_dippoint = -0.2;
+            y_dippoint = -0.2;
         }
         else if (dipdirection == "SE") {
-            x_dippoint = 0.1;
-            y_dippoint = -0.1;
+            x_dippoint = 0.2;
+            y_dippoint = -0.2;
         }
         else {
             window.alert("invalid dipdirection");
@@ -95,8 +95,8 @@ function generateFigure(angle, dipdirection) {
        0.0, 0.0, 0,
        -x_cordinate, -y_cordinate, 0,
        0.0, 0.0, 0,
-       x_cordinate - 0.4, y_cordinate - 0.4, 0,
-       -x_cordinate + 0.4, -y_cordinate + 0.4, 0,
+       x_cordinate/4, y_cordinate/4, 0,
+       -x_cordinate/4, -y_cordinate/4, 0,
        x_dippoint, y_dippoint, 0
 
     ]
