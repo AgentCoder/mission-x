@@ -16,9 +16,8 @@
        0.0, -1.0, 0,
        0.0, 1.0, 0,
        x_cordinate, y_cordinate, 0,
-       0.0, 0.0, 0,
-       -x_cordinate, -y_cordinate, 0,
-       0.0, 0.0, 0
+       -x_cordinate, -y_cordinate, 0
+       
     ]
 
     // Create an empty buffer object
@@ -111,8 +110,8 @@
     gl.viewport(0, 0, canvas.width, canvas.height);
 
     // Draw the triangle
-    gl.drawArrays(gl.LINES, 0, 4);
-    gl.drawArrays(gl.LINES, 4, 4);
+    gl.drawArrays(gl.LINES, 0, 6);
+   //gl.drawArrays(gl.LINES, 4, 4);
 
 
 
