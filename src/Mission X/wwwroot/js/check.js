@@ -153,6 +153,10 @@ function ddquadtoddazu(x) {
 
 
 
+
+
+
+
 function ddazutoquad(x) {
 
 
@@ -181,3 +185,5 @@ function ddazutoquad(x) {
 
 
 }
+
+
