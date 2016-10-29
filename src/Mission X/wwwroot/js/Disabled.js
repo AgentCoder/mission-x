@@ -34,3 +34,10 @@ function option4() {
     document.getElementById("quadrant6").disabled = false;
 
 }
+function Valid(x)
+{
+    if(x = "")
+    {
+
+    }
+}

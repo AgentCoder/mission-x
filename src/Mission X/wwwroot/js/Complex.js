@@ -8,22 +8,33 @@
     var Lb = document.getElementById("value-LB1").value;
     var Lc = document.getElementById("value-LC1").value;
     var Ld = document.getElementById("value-LD1").value;
-
-    if (Lc > 0 && Ld > 0)
+   
+    if (!isNaN(La) && !isNaN(Lb) && !isNaN(Lc) && !isNaN(Ld) && !isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d))
     {
-        if (a > 0 && c == 0 && b>= 0)
-        {
-            Lb = 90 - Ld;
-            La = 180 - (parseFloat(Lb) + parseFloat(Lc));
-            c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-            document.getElementById("value-LA1").value = La;
-            document.getElementById("value-LB1").value = Lb;
-            document.getElementById("value-c1").value = Math.round(parseFloat(c));
+        
+        if (Lc > 0 && Ld > 0) {
+            
+            if (a > 0 && c == 0 && b >= 0) {
+                
+                Lb = 90 - Ld;
+                La = 180 - (parseFloat(Lb) + parseFloat(Lc));
+                c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                document.getElementById("value-LA1").value = La;
+                document.getElementById("value-LB1").value = Lb;
+                document.getElementById("value-c1").value = Math.round(parseFloat(c));
+
+            }
+        }
+        else {
+            alert("Enter a valid input");
 
         }
     }
-    else {
-        alert("Enter a valid input");
-
-    }
+    
+}
+var img;
+function openWin(img)
+{
+    var path = "~/images/"
+    window.open(path + img, "mywin", "menubar=0,resizable=0,width=200,height=200");
 }
