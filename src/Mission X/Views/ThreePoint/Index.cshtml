@@ -16,46 +16,46 @@
 
             <div class="mdl-card__actions mdl-card--border">
 
-                <form action="#">
+                <form action="myform">
 
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointA">
-                        <label class="mdl-textfield__label" for="pointA">Point A</label>
+                        <input class="mdl-textfield__input" type="text" id="pointA" onkeypress="return isNumber(event)">
+                        <label class="mdl-textfield__label" for="pointA">Enter a point on the rock</label>
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointB">
-                        <label class="mdl-textfield__label" for="pointB">Point B</label>
+                        <input class="mdl-textfield__input" type="text" id="pointB" onkeypress="return isNumber(event)">
+                        <label class="mdl-textfield__label" for="pointB">Enter another point on rock</label>
                     </div>
 
+
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointC">
-                        <label class="mdl-textfield__label" for="pointC">Point C</label>
+                        <input class="mdl-textfield__input" type="text" id="pointC" onkeypress="return isNumber(event)"> 
+                        <label class="mdl-textfield__label" for="pointC">Enter the last point on the rock</label>
                     </div>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="dist">
-                        <label class="mdl-textfield__label" for="dist">Enter the distance between A,B</label>
+                        <input class="mdl-textfield__input" type="text" id="dist" onkeypress="return isNumber(event)">
+                        <label class="mdl-textfield__label" for="dist">Enter the first distance</label>
+                    </div>
+                    <br>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="dist1" onkeypress="return isNumber(event)">
+                        <label class="mdl-textfield__label" for="dist1">Enter the second distance</label>
                     </div>
                     </br>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="dist1">
-                        <label class="mdl-textfield__label" for="dist1">Enter the distance between A,C</label>
-                    </div>
-                    </br>
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="bear">
+                        <input class="mdl-textfield__input" type="text" id="bear" onkeypress="return isNumber(event)">
                         <label class="mdl-textfield__label" for="bear">Enter the first bearing</label>
                     </div>
                     </br>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="bear1">
+                        <input class="mdl-textfield__input" type="text" id="bear1" onkeypress="return isNumber(event)">
                         <label class="mdl-textfield__label" for="bear1">Enter the second bearing</label>
                     </div>
-                    </br>
+                    
                     <center>
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu()">
                             Submit
@@ -63,10 +63,6 @@
                         <div id="puli"></div>
                     </center>
                 </form>
-                <br />
-                <br />
-                <br />
-                <br />
             </div>
         </div>
     </div>
