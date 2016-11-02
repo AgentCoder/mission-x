@@ -7,6 +7,7 @@
 /// <reference path="js/ddquadtoddazu.js" />
 /// <reference path="js/dipdipazimuthtoquadrant.js" />
 /// <reference path="js/disabled.js" />
+/// <reference path="js/dynamic.js" />
 /// <reference path="js/figure.js" />
 /// <reference path="js/imagedownload.js" />
 /// <reference path="js/ludo.js" />

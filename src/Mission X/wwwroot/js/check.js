@@ -187,3 +187,19 @@ function ddazutoquad(x) {
 }
 
 
+//function fieldValidations() {
+
+//    var TextBoxesGroup = document.getElementById("TextBoxesGroup");
+//    var children = document.getElementById("TextBoxesGroup").childElementCount;
+
+//    for (var i = 0; i < children; i++) {
+
+//        alert("Entered For loop");
+//        if (TextBoxesGroup[i].length == 0) {
+
+//            document.getElementById("error" + i).innerHTML = "Cannot be Empty String";
+//        }
+//    }
+
+
+//}
