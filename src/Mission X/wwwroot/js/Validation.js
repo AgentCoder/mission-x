@@ -44,6 +44,16 @@ function ValidToLA(x) {
     }
 
 }
+function ValidToLB(x) {
+    $(SLb).show()
+    if (isNaN(x)) {
+        document.getElementById("SLb").innerHTML = "enter a valid input";
+    }
+    else {
+        $(SLb).hide();
+    }
+
+}
 
 function ValidToLC(x) {
     $(SLc).show()

@@ -1,36 +1,28 @@
 ﻿function calcu() {
-
-    
     var i = 0;
-    var letters = /^[A-Za-z]+$/;
+    // Retrieving the values 
     var point = document.getElementById("pointA").value;
     window.alert(point);
     var point1 = document.getElementById("pointB").value;
     var point2 = document.getElementById("pointC").value;
-        var dista = document.getElementById("dist").value;
+    var dista = document.getElementById("dist").value;
+    //difference between point B and A
         var subdist = point1 - point;
-        var x = subdist / dista;
+        var x = subdist / dista; 
+    //calculating apparent dip
         var appdip = Math.atan(x);
+    // difference between point C and B
         var temp = point2 - point1;
+    //calculating distance and subtracting it
         var temp2 = temp / Math.tan(appdip);
         var temp3 = temp2 - dista;
+    //Getting to know the coordinates of the point
         var point11 = point1 - temp3;
-
+    //calculating strike
         if (point1 > point11) {
             var strike = point1 - point11;
         } else {
             var strike = point11 - point1;
         }
-
-        document.getElementById('puli').innerHTML = strike
-
+        document.getElementById('puli').innerHTML = strike;
 }
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
-

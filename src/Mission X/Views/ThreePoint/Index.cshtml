@@ -15,58 +15,60 @@
             <div class="mdl-card__supporting-text"><h3> Enter any three points on the rock.</h3></div>
 
             <div class="mdl-card__actions mdl-card--border">
-
                 <form action="myform">
-
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointA" onkeypress="return isNumber(event)">
+                        <input class="mdl-textfield__input" type="text" id="pointA" oninput="ValidToA(this.value)">
                         <label class="mdl-textfield__label" for="pointA">Enter a point on the rock</label>
+                        <p id="Sa" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
-
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointB" onkeypress="return isNumber(event)">
+                        <input class="mdl-textfield__input" type="text" id="pointB" oninput="ValidToB(this.value)">
                         <label class="mdl-textfield__label" for="pointB">Enter another point on rock</label>
+                        <p id="Sb" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
 
 
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointC" onkeypress="return isNumber(event)"> 
+                        <input class="mdl-textfield__input" type="text" id="pointC" oninput="ValidToC(this.value)">
                         <label class="mdl-textfield__label" for="pointC">Enter the last point on the rock</label>
+                        <p id="Sc" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="dist" onkeypress="return isNumber(event)">
+                        <input class="mdl-textfield__input" type="text" id="dist" oninput="ValidToLA(this.value)">
                         <label class="mdl-textfield__label" for="dist">Enter the first distance</label>
+                        <p id="SLa" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="dist1" onkeypress="return isNumber(event)">
+                        <input class="mdl-textfield__input" type="text" id="dist1" oninput="ValidToLC(this.value)">
                         <label class="mdl-textfield__label" for="dist1">Enter the second distance</label>
+                        <p id="SLc" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
-                    </br>
+                    <br>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="bear" onkeypress="return isNumber(event)">
+                        <input class="mdl-textfield__input" type="text" id="bear" oninput="ValidToMa(this.value)">
                         <label class="mdl-textfield__label" for="bear">Enter the first bearing</label>
+                        <p id="Ma" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
-                    </br>
+                    <br>
                     <br>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="bear1" onkeypress="return isNumber(event)">
+                        <input class="mdl-textfield__input" type="text" id="bear1" oninput="ValidToMb(this.value)">
                         <label class="mdl-textfield__label" for="bear1">Enter the second bearing</label>
+                        <p id="Mb" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
-                    
-                    <center>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu()">
-                            Submit
-                        </button>
-                        <div id="puli"></div>
-                    </center>
+                                <center>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu()">
+                                        Submit
+                                    </button>
+                                    <div id="puli"></div>
+                                </center>
                 </form>
             </div>
         </div>
     </div>
-
 </div>
 
 
