@@ -39,7 +39,6 @@
                         <label class="mdl-textfield__label" for="dist">Enter the first distance</label>
                         <p id="SLa" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
-                    <br>
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input" type="text" id="dist1" oninput="ValidToLC(this.value)">
                         <label class="mdl-textfield__label" for="dist1">Enter the second distance</label>
@@ -52,19 +51,30 @@
                         <label class="mdl-textfield__label" for="bear">Enter the first bearing</label>
                         <p id="Ma" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
-                    <br>
-                    <br>
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input" type="text" id="bear1" oninput="ValidToMb(this.value)">
                         <label class="mdl-textfield__label" for="bear1">Enter the second bearing</label>
                         <p id="Mb" style="color : red; font : bold 18px arial,verdana;"></p>
                     </div>
+                    <br>
+                    <center>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu()">
+                            Submit
+                        </button>
+                        <div id="3error"></div>
+                    </center>
+                    <br>
+                    <br\>
+                    <div class="col-sm-8">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
+                            <div class="panel-body">
                                 <center>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu()">
-                                        Submit
-                                    </button>
-                                    <div id="puli"></div>
+                                    <canvas width="800" height="400" id="my_Canvas"></canvas>
                                 </center>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

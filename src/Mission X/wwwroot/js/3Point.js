@@ -2,7 +2,6 @@
     var i = 0;
     // Retrieving the values 
     var point = document.getElementById("pointA").value;
-    window.alert(point);
     var point1 = document.getElementById("pointB").value;
     var point2 = document.getElementById("pointC").value;
     var dista = document.getElementById("dist").value;
@@ -24,5 +23,5 @@
         } else {
             var strike = point11 - point1;
         }
-        document.getElementById('puli').innerHTML = strike;
+        document.getElementById('3error').innerHTML = strike;
 }
