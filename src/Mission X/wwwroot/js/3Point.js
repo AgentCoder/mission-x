@@ -23,5 +23,6 @@
         } else {
             var strike = point11 - point1;
         }
-        document.getElementById('3error').innerHTML = strike;
+        
+        param(appdip);
 }
