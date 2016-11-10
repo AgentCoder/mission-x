@@ -1,13 +1,4 @@
-﻿
-
-
-
-
-
-
-
-
-function myFunction() {
+﻿function myFunction() {
 
 
     var a = document.getElementById("quadrant1").value;
@@ -28,8 +19,9 @@ function myFunction() {
                 if (parseFloat(b) > parseFloat(c)) {
                     $(sidea).hide();
                     
-                    document.getElementById("quadrant1").value = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(c) * parseFloat(c))));
-                   
+                    a = Math.sqrt(parseFloat((parseFloat(b) * parseFloat(b)) - (parseFloat(c) * parseFloat(c))));
+                    Canny(c, a, b);
+                    document.getElementById("quadrant1").value = parseFloat(a);
                 }
                 else {
                     alert("hypotenuse is the largest side so b should be greater than other value");

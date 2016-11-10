@@ -10,6 +10,7 @@
 /// <reference path="js/dynamic.js" />
 /// <reference path="js/figure.js" />
 /// <reference path="js/imagedownload.js" />
+/// <reference path="js/ludo.js" />
 /// <reference path="js/multipletriangle.js" />
 /// <reference path="js/quadranttoazimuth.js" />
 /// <reference path="js/simpleprob.js" />
