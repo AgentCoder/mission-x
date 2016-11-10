@@ -7,9 +7,13 @@
 
 $(document).ready(function () {
 
+
+
+
+
     // Counter initiated to 2.
     var counter = 2;
-    var group = $("#TextBoxesGroup").val();
+    
 
     // Function invoked as soon as the 'Add' button is clicked.
 
@@ -17,28 +21,40 @@ $(document).ready(function () {
 
         // Checks if counter is greater than 10, then throws an error message.
 
-        if (counter > 10) {
+        if (counter > 5) {
             $("#errormsg").html("Limit of legs exceeded...!!!");
             return false;
         }
        
         
-
+        
          // If the counter is less than one - Creates a parent element 'div'.
-        var newTextBoxDiv = $(document.createElement('div'))
+        var panel = $(document.createElement('div'))
              .attr({
-                 class: "mdl-textfield mdl-js-textfield",
-                 id: "field" + counter
+                 class: "panel panel-default",
+                 id: "leg"+counter
              });
 
         // After creating the parent element, creates a child elements.
-        newTextBoxDiv.after().html('<input class="mdl-textfield__input" type="text" id="direction' + counter + '">' +
-            '<label class="mdl-textfield__label" for="direction' + counter + '" id="label' + counter + '">Direction ' + counter + '</label>' +
+        panel.after().html('<div class="panel panel-heading">Leg ' + counter + '</div>'+
+                            '<div class="panel panel-body">'+
+                            '<div class="form-group">'+
+                                                    
+                                                   '<div class="col-sm-10">'+
+                                                        '<select id="select111" class="form-control">'+
+                                                            '<option value="NE">North - East</option>'+
+                                                           ' <option value="NW">North - West</option>'+
+                                                           ' <option value="SE">South - East</option>'+
+                                                           ' <option value="SW">South - West</option>'+
+                                                       ' </select>'+
+                                                  '</div>'+
+                                               '</div>' + '<br/><br/>Degrees: <p id="degreeResult' + counter + '">');
 
-            '<div id="error' + counter + '" style="color:red"></div>');
+        
+        
 
         // Appending of child elements.
-        newTextBoxDiv.appendTo("#TextBoxesGroup");
+        panel.appendTo("#TextBoxesGroup");
 
         // Incrementing the counter.
         counter++;
@@ -50,6 +66,8 @@ $(document).ready(function () {
     // Button clicked as soon as the 'Delete' button is clicked.
 
     $("#removeButton").click(function () {
+
+        $("#errormsg").hide();
 
         // Checks the counter if less than 1 - Throws an error.
         if (counter == 1) {
@@ -64,7 +82,7 @@ $(document).ready(function () {
 
 
             counter--;
-            $("#field" + counter).remove();
+            $("#leg" + counter).remove();
         }
 
 
@@ -76,4 +94,19 @@ $(document).ready(function () {
 
     // End of document ready function.
 });
+
+
+
+function degreeResult(x) {
+
+    $("#degreeResult1").html(x);
+
+}
+
+
+
+function pacesResult(x) {
+
+    $("#pacesResult1").html(x);
+}
 

@@ -142,6 +142,9 @@
       "jQuery/2.1.1": {
         "type": "package"
       },
+      "material-design-lite/1.1.2": {
+        "type": "package"
+      },
       "materialize/0.97.6": {
         "type": "package",
         "dependencies": {
@@ -2232,6 +2235,9 @@
         }
       },
       "jQuery/2.1.1": {
+        "type": "package"
+      },
+      "material-design-lite/1.1.2": {
         "type": "package"
       },
       "materialize/0.97.6": {
@@ -5110,6 +5116,9 @@
       "jQuery/2.1.1": {
         "type": "package"
       },
+      "material-design-lite/1.1.2": {
+        "type": "package"
+      },
       "materialize/0.97.6": {
         "type": "package",
         "dependencies": {
@@ -7234,6 +7243,9 @@
       "jQuery/2.1.1": {
         "type": "package"
       },
+      "material-design-lite/1.1.2": {
+        "type": "package"
+      },
       "materialize/0.97.6": {
         "type": "package",
         "dependencies": {
@@ -9327,6 +9339,9 @@
         }
       },
       "jQuery/2.1.1": {
+        "type": "package"
+      },
+      "material-design-lite/1.1.2": {
         "type": "package"
       },
       "materialize/0.97.6": {
@@ -12653,6 +12668,9 @@
         }
       },
       "jQuery/2.1.1": {
+        "type": "package"
+      },
+      "material-design-lite/1.1.2": {
         "type": "package"
       },
       "materialize/0.97.6": {
@@ -15997,6 +16015,24 @@
         "Tools/install.ps1",
         "Tools/jquery-2.1.1.intellisense.js",
         "Tools/uninstall.ps1"
+      ]
+    },
+    "material-design-lite/1.1.2": {
+      "type": "package",
+      "sha512": "AeTrouOQdvuUs9iuqv2HQN4CudJrKChdSW9yd3Mw/EPWOivfJFcaiBv/oE//8K+Zj2FNKvu3wZ0+NKhtJQD9Gw==",
+      "files": [
+        "content/Content/mdl-v1.1.2/bower.json",
+        "content/Content/mdl-v1.1.2/LICENSE",
+        "content/Content/mdl-v1.1.2/material.css",
+        "content/Content/mdl-v1.1.2/material.js",
+        "content/Content/mdl-v1.1.2/material.min.css",
+        "content/Content/mdl-v1.1.2/material.min.css.map",
+        "content/Content/mdl-v1.1.2/material.min.js",
+        "content/Content/mdl-v1.1.2/material.min.js.map",
+        "content/Content/mdl-v1.1.2/package.json",
+        "material-design-lite.1.1.2.nupkg",
+        "material-design-lite.1.1.2.nupkg.sha512",
+        "material-design-lite.nuspec"
       ]
     },
     "materialize/0.97.6": {
@@ -21848,6 +21884,7 @@
     "": [
       "EntityFramework.Commands >= 7.0.0-rc1-final",
       "EntityFramework.MicrosoftSqlServer >= 7.0.0-rc1-final",
+      "material-design-lite >= 1.1.2",
       "materialize >= 0.97.6",
       "Microsoft.ApplicationInsights.AspNet >= 1.0.0-rc1",
       "Microsoft.AspNet.Authentication.Cookies >= 1.0.0-rc1-final",
