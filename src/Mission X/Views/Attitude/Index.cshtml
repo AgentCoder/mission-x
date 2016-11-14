@@ -253,7 +253,7 @@
 
                                 
                                     <div id="TextBoxesGroup">
-                                        <div class="panel panel-default" id="leg1">
+                                        <div class="panel panel-default" id="leg1" disabled>
                                             <div class="panel panel-heading">
                                                 Leg 1
                                             </div>
@@ -273,9 +273,9 @@
 
                                                 <br /><br />
                                                 Degrees: <p id="degreeResult1"></p>
-                                                <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" oninput="degreeResult(this.value)" onchange="degreeResult(this.value)"/>
+                                                <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" oninput="paces(this.value, document.getElementById('slider12').value)" onchange="paces(this.value, document.getElementById('slider12').value)"/>
                                                 Paces: <p id="pacesResult1"></p>
-                                                <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" oninput="pacesResult(this.value)" onchange="pacesResult(this.value)"/>
+                                                <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" oninput="paces(document.getElementById('slider11').value,this.value)" onchange="paces(document.getElementById('slider11').value,this.value)"/>
                                                
                                             </div>
                                         </div>
@@ -332,7 +332,7 @@
 
                                 <div class="panel panel-success">
                                     <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
-                                    <div class="panel-body"><center> <canvas width="300" height="300" id="my_Canvas1"></canvas></center></div>
+                                    <div class="panel-body"><center> <canvas width="300" height="300" id="pacescanvas"></canvas></center></div>
                                 </div>
                             </div>
 
@@ -342,7 +342,7 @@
 
                             <!-- Raised button with ripple -->
 
-                            <div id="downloads1"></div>
+                           @*<div id="downloads1"></div>*@
 
                             <br />
                             <br />

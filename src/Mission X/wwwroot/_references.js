@@ -13,6 +13,7 @@
 /// <reference path="js/imagedownload.js" />
 /// <reference path="js/ludo.js" />
 /// <reference path="js/multipletriangle.js" />
+/// <reference path="js/paces.js" />
 /// <reference path="js/quadranttoazimuth.js" />
 /// <reference path="js/simpleprob.js" />
 /// <reference path="js/site.js" />
