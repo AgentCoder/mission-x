@@ -13,6 +13,7 @@ $(document).ready(function () {
 
     // Counter initiated to 2.
     var counter = 2;
+    var prev = 1;
     
 
     // Function invoked as soon as the 'Add' button is clicked.
@@ -21,12 +22,14 @@ $(document).ready(function () {
 
         // Checks if counter is greater than 10, then throws an error message.
 
+
         if (counter > 5) {
             $("#errormsg").html("Limit of legs exceeded...!!!");
             return false;
         }
        
         
+         document.getElementById("leg" + prev).disabled = true;
         
          // If the counter is less than one - Creates a parent element 'div'.
         var panel = $(document.createElement('div'))
@@ -58,6 +61,7 @@ $(document).ready(function () {
 
         // Incrementing the counter.
         counter++;
+        prev++;
 
         // End of function that handles Add button.
     });
