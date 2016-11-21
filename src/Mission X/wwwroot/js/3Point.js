@@ -5,26 +5,31 @@
     var point1 = document.getElementById("pointB").value;
     var point2 = document.getElementById("pointC").value;
     var dista = document.getElementById("dist").value;
+    //if all values are null
     if (point == null || point == "", point1 == null || point1 == "", point2 == null || point2 == "", dista == null || dista == "") {
         alert("Please Fill All Required Fields");
         return false;
     }
+    //about point A
     if (point == null || point == "" || point == 0)
     {
         alert("The first point is not appropriate");
         return false;
         
     }
+    //About point B
     if (point1 == null || point1 == "" || point1 == 0) {
         alert("The second point is not appropriate");
         return false;
 
     }
+    //About point C
     if (point2 == null || point2 == "" || point2 == 0) {
         alert("The third point is not appropriate");
         return false;
 
     }
+    //if the values entered are same
     if(point==point1 || point==point2 || point == dista)
     {
         alert("Please check the first point again");
@@ -43,13 +48,18 @@
         return false;
 
     }
+    // highest outcrop
+    //if (point > ponit1)
+    //{
+    //    alert("Point B cannot be less than point A")
+    //}
     //difference between point B and A
         var subdist = point1 - point;
         var x = subdist / dista; 
     //calculating apparent dip
         var appdip = Math.atan(x);
     // difference between point C and B
-        var temp = point2 - point1;
+        var temp = point2 - point;
     //calculating distance and subtracting it
         var temp2 = temp / Math.tan(appdip);
         var temp3 = temp2 - dista;
@@ -62,4 +72,5 @@
             var strike = point11 - point1;
         }
         param(appdip);
+        document.getElementById('msg').innerHTML = strike;
 }
