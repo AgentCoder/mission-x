@@ -3,6 +3,7 @@
 *@
 @{
 }
+@*<meta http-equiv="refresh" content="60" />*@
 <head>
     <script type="text/javascript">
         var img;
@@ -99,7 +100,7 @@
                         <div class="col-sm-3">
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="quadrant1" oninput="ValidToA(this.value)">
-                                <label class="mdl-textfield__label" for="quadrant1" id="sidea">Enter a value</label>
+                                <label class="mdl-textfield__label" for="quadrant1" id="sidea" onchange="">Enter a value</label>
                                 <p id="Sa" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
                             <br />
@@ -139,7 +140,7 @@
                                     
                                     <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
                                     <div class="panel-body"><center> 
-                                        <canvas width="400" height="400" id="my_Canvas">
+                                        <canvas width="500" height="500" id="my_Canvas">
                                                                          
                                         </canvas></center>
                                     </div>
@@ -153,14 +154,23 @@
 
 
 
-
-                    <center>
-                        <button type="button" id="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
-                            Submit
-                        </button>
-                    </center>
-
-                </form>
+                    <div class="container text-center">
+                        <div class="col-sm-6">
+                            <center>
+                                <button type="button" id="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
+                                    Submit
+                                </button>
+                            </center>
+                        </div>
+                        <div class="col-sm-6">
+                            <center>
+                                <button type="button" id="reload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="refresh()">
+                                    reload
+                                </button>
+                            </center>
+                        </div>
+                        </div>
+</form>
                 <br />
                 <br />
 
@@ -269,7 +279,7 @@
                                 <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
                                 <div class="panel-body">
                                     <center>
-                                        <canvas width="300" height="400" id="my_Canvas"></canvas>
+                                        <canvas width="500" height="500" id="my_Canvas2"></canvas>
                                     </center>
 
                                 </div>
@@ -374,7 +384,7 @@
                             <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
                             <div class="panel-body">
                                 <center>
-                                    <canvas width="500" height="400" id="my_Canvas"></canvas>
+                                    <canvas width="500" height="400" id="my_Canvas3"></canvas>
                                 </center>
 
                             </div>

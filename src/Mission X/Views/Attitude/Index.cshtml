@@ -273,10 +273,14 @@
 
                                                 <br /><br />
                                                 Degrees: <p id="degreeResult1"></p>
-                                                <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" oninput="paces(this.value, document.getElementById('slider12').value)" onchange="paces(this.value, document.getElementById('slider12').value)"/>
+                                                <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" 
+                                                oninput="paces(this.value, document.getElementById('slider12').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" 
+                                                onchange="paces(this.value, document.getElementById('slider12').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"/>
                                                 Paces: <p id="pacesResult1"></p>
-                                                <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" oninput="paces(document.getElementById('slider11').value,this.value)" onchange="paces(document.getElementById('slider11').value,this.value)"/>
-                                               
+                                                <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" 
+                                                oninput="paces(document.getElementById('slider11').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" 
+                                                onchange="paces(document.getElementById('slider11').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"/>
+                                                
                                             </div>
                                         </div>
                                 </div>
@@ -329,6 +333,26 @@
                             @* START OF GRAPHICAL DIAGRAM OF SIMPLE PLAN VIEW *@
 
                             <div class="container" style="width:580px">
+
+
+                                Scale:
+                                 <p id="scaleResultX"></p>
+                                 <p id="scaleResultY"></p> 
+
+                                <p style="width:200px">
+
+
+                                    <input id="slider13" class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5" 
+                                    tabindex="0" oninput="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, this.value, document.getElementById('slider14').value)"
+                                    onchange="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, this.value, document.getElementById('slider12').value)" />
+
+
+                                    <input id="slider14" class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5" 
+                                    tabindex="0" oninput="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, document.getElementById('slider13').value, this.value)" 
+                                    onchange="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, document.getElementById('slider13').value, this.value)" />
+                                </p>
+                                
+
 
                                 <div class="panel panel-success">
                                     <div class="panel-heading">Graphical Orientation for Inputs Produced</div>

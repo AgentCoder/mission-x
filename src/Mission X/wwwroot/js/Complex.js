@@ -1,5 +1,6 @@
-﻿function myFunction3() {
-
+﻿function myFunction3()
+{
+    
     var a = document.getElementById("value-a1").value;
     var b = document.getElementById("value-b1").value;
     var c = document.getElementById("value-c1").value;
@@ -10,8 +11,8 @@
     var Ld = document.getElementById("value-LD1").value;
 
     if (!isNaN(La) && !isNaN(Lb) && !isNaN(Lc) && !isNaN(Ld) && !isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d)) {
-
-        if (Lc > 0 && Ld > 0) {
+        
+        if (Lc > 0 && Ld > 0 && Lc < 180 ) {
 
 
 
@@ -24,13 +25,11 @@
                         Lb = 90 - Ld;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        $(value-LA1).hide();
-                        $(value-LB1).hide();
-                        $(value-c1).hide();
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-c1").value =parseFloat(c).toFixed(2);
+                        ComplexDiagram(La,Lb,Lc,a,b,c);
 
                     }
                     else if (b == 0 && (value == "B" || value.toLowerCase() == "b")) {
@@ -38,13 +37,11 @@
                         Lb = 90 - Ld;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        $(value-LA1).hide();
-                        $(value-LB1).hide();
-                        $(value-b1).hide();
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-b1").value = parseFloat(b).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
                     }
                 }
             }
@@ -57,13 +54,11 @@
                         Lb = 90 - Ld;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        $(value-LA1).hide();
-                        $(value-LB1).hide();
-                        $(value-a1).hide();
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-a1").value = parseFloat(a).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
 
                     }
                     else if (c == 0 && (value1 == "C" || value1.toLowerCase() == "c")) {
@@ -71,10 +66,11 @@
                         Lb = 90 - Ld;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-c1").value = parseFloat(c).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
                     }
                 }
             }
@@ -90,10 +86,11 @@
                         Lb = 90 - Ld;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-a1").value = parseFloat(a).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
 
                     }
                     else if (b == 0 && (value2 == "B" || value2.toLowerCase() == "b")) {
@@ -101,10 +98,11 @@
                         Lb = 90 - Ld;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LB1").value = Lb;
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
                         document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
                     }
                     else {
                         alert("4");
@@ -130,10 +128,11 @@
                         Lb = 90 - Ld;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
 
                     }
                     else if (b == 0 && (value == "B" || value.toLowerCase() == "b")) {
@@ -141,9 +140,11 @@
                         Lb = 90 - Ld;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
                         document.getElementById("value-LC1").value = Lc;
                         document.getElementById("value-LB1").value = Lb;
                         document.getElementById("value-b1").value = Math.round(parseFloat(b));
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
 
                     }
                 }
@@ -157,21 +158,23 @@
                         Lb = 90 - Ld;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-a1").value = parseFloat(a).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
 
                     }
                     else if (c == 0 && (value1 == "C" || value1.toLowerCase() == "c")) {
 
                         Lb = 90 - Ld;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-c1").value = parseFloat(c).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c);
                     }
                 }
             }
@@ -187,10 +190,11 @@
                         Lb = 90 - Ld;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
 
                     }
                     else if (b == 0 && (value2 == "B" || value2.toLowerCase() == "b")) {
@@ -198,10 +202,11 @@
                         Lb = 90 - Ld;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-b1").value = parseFloat(b).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else {
                         alert("4");
@@ -227,21 +232,23 @@
                         Ld = 90 - Lb;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-c1").value = parseFloat(c).toFixed(2);
 
-
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else if (b == 0 && (value == "B" || value.toLowerCase() == "b")) {
 
                         Ld = 90 - Lb;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                 }
             }
@@ -254,21 +261,23 @@
                         Ld = 90 - Lb;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
 
-
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else if (c == 0 && (value1 == "C" || value1.toLowerCase() == "c")) {
 
                         Ld = 90 - Lb;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                 }
             }
@@ -284,21 +293,23 @@
                         Ld = 90 - Lb;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
 
                     }
                     else if (b == 0 && (value2 == "B" || value2.toLowerCase() == "b")) {
 
                         Ld = 90 - Lb;
                         La = 180 - (parseFloat(Lb) + parseFloat(Lc));
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LA1").value = La;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else {
                         alert("4");
@@ -323,21 +334,23 @@
                         Ld = 90 - Lb;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
 
-
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else if (b == 0 && (value == "B" || value.toLowerCase() == "b")) {
 
                         Ld = 90 - Lb;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                 }
             }
@@ -349,10 +362,11 @@
                         Ld = 90 - Lb;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
 
                     }
                     else if (c == 0 && (value1 == "C" || value1.toLowerCase() == "c")) {
@@ -360,10 +374,11 @@
                         Ld = 90 - Lb;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                 }
             }
@@ -377,21 +392,23 @@
                         Ld = 90 - Lb;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
 
-
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else if (b == 0 && (value2 == "B" || value2.toLowerCase() == "b")) {
 
                         Ld = 90 - Lb;
                         Lc = 180 - (parseFloat(Lb) + parseFloat(La));
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LC1").value = Lc;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else {
                         alert("4");
@@ -413,12 +430,13 @@
 
                         Lb = 180 - (parseFloat(La) + parseFloat(Lc));
                         Ld = 90 - Lb;
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
 
-
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else if (b == 0 && (value == "B" || value.toLowerCase() == "b")) {
 
@@ -426,10 +444,11 @@
                         Lb = 180 - (parseFloat(La) + parseFloat(Lc));
                         Ld = 90 - Lb;
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                 }
             }
@@ -442,10 +461,11 @@
                         Lb = 180 - (parseFloat(La) + parseFloat(Lc));
                         Ld = 90 - Lb;
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
 
                     }
                     else if (c == 0 && (value1 == "C" || value1.toLowerCase() == "c")) {
@@ -453,10 +473,11 @@
                         Lb = 180 - (parseFloat(La) + parseFloat(Lc));
                         Ld = 90 - Lb;
                         c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-c1").value = Math.round(parseFloat(c));
-
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                 }
             }
@@ -472,10 +493,11 @@
                         Lb = 180 - (parseFloat(La) + parseFloat(Lc));
                         Ld = 90 - Lb;
                         a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-a1").value = Math.round(parseFloat(a));
-
+                        b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
 
                     }
                     else if (b == 0 && (value2 == "B" || value2.toLowerCase() == "b")) {
@@ -483,10 +505,11 @@
                         Lb = 180 - (parseFloat(La) + parseFloat(Lc));
                         Ld = 90 - Lb;
                         b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
-                        document.getElementById("value-LD1").value = Ld;
-                        document.getElementById("value-LB1").value = Lb;
-                        document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                        a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lc) * 0.0174533)) * c;
+                        document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                        document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                        document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                        ComplexDiagram(La, Lb, Lc, a, b, c)
                     }
                     else {
                         alert("4");
@@ -506,13 +529,13 @@
                 Ld = 90 - parseFloat(Lb);
                 Lc = 180 - (parseFloat(La) + parseFloat(Lb));
                 c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                document.getElementById("value-LA1").value = La;
-                document.getElementById("value-LB1").value = Lb;
-                document.getElementById("value-LC1").value = Lc;
-                document.getElementById("value-LD1").value = Ld;
-                document.getElementById("value-c1").value = Math.round(parseFloat(c));
+                document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
 
-
+                ComplexDiagram(La, Lb, Lc, a, b, c)
 
             }
 
@@ -523,13 +546,13 @@
                 Ld = 90 - Lb;
                 Lc = 180 - (La + Lb);
                 c = (Math.sin(parseFloat(Lc) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                document.getElementById("value-LA1").value = La;
-                document.getElementById("value-LB1").value = Lb;
-                document.getElementById("value-LC1").value = Lc;
-                document.getElementById("value-LD1").value = Ld;
-                document.getElementById("value-c1").value = Math.round(parseFloat(c));
+                document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
 
-
+                ComplexDiagram(La, Lb, Lc, a, b, c)
 
             }
             else if (Lc > 0 && Lb == 0 && La == 0 && Ld == 0) {
@@ -538,11 +561,12 @@
                     Ld = 90 - Lb;
                     La = 180 - (Lc + Lb);
 
-                    document.getElementById("value-LA1").value = La;
-                    document.getElementById("value-LB1").value = Lb;
-                    document.getElementById("value-LC1").value = Lc;
-                    document.getElementById("value-LD1").value = Ld;
-                    document.getElementById("value-c1").value = Math.round(parseFloat(c));
+                    document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                    document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                    document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                    document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                    document.getElementById("value-c1").value = (parseFloat(c)).toFixed(2);
+                    ComplexDiagram(La, Lb, Lc, a, b, c)
                 }
                 else {
                     alert("Insufficient inputs you must enter the value of c for these set of inputs");
@@ -557,12 +581,12 @@
                 Lb = 180 - (La + Lc);
                 Ld = 90 - Lb;
                 b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                document.getElementById("value-LA1").value = La;
-                document.getElementById("value-LB1").value = Lb;
-                document.getElementById("value-LC1").value = Lc;
-                document.getElementById("value-LD1").value = Ld;
-                document.getElementById("value-b1").value = Math.round(parseFloat(b));
-
+                document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                ComplexDiagram(La, Lb, Lc, a, b, c)
 
             }
 
@@ -572,11 +596,12 @@
                     La = Math.asin((parseFloat(a) / parseFloat(b)) * Math.sin(parseFloat(Lb))) * 57.298;
                     Ld = 90 - Lb;
                     Lc = 180 - (La + Lb);
-                    document.getElementById("value-LA1").value = La;
-                    document.getElementById("value-LB1").value = Lb;
-                    document.getElementById("value-LC1").value = Lc;
-                    document.getElementById("value-LD1").value = Ld;
-                    document.getElementById("value-b1").value = Math.round(parseFloat(b));
+                    document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                    document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                    document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                    document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                    document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                    ComplexDiagram(La, Lb, Lc, a, b, c)
                 }
                 else {
                     alert("Insufficient inputs you must enter the value of b for these set of inputs");
@@ -589,11 +614,12 @@
                 Lb = 180 - (Lc + La);
                 Ld = 90 - Lb;
                 b = (Math.sin(parseFloat(Lb) * 0.0174533) / Math.sin(parseFloat(La) * 0.0174533)) * a;
-                document.getElementById("value-LA1").value = La;
-                document.getElementById("value-LB1").value = Lb;
-                document.getElementById("value-LC1").value = Lc;
-                document.getElementById("value-LD1").value = Ld;
-                document.getElementById("value-b1").value = Math.round(parseFloat(b));
+                document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                document.getElementById("value-b1").value = (parseFloat(b)).toFixed(2);
+                ComplexDiagram(La, Lb, Lc, a, b, c)
             }
         } // end when a and c are given...
 
@@ -605,11 +631,12 @@
                     Lb = Math.asin((parseFloat(b) / parseFloat(a)) * Math.sin(parseFloat(La))) * 57.298;
                     Ld = 90 - Lb;
                     Lc = 180 - (La + Lb);
-                    document.getElementById("value-LA1").value = La;
-                    document.getElementById("value-LB1").value = Lb;
-                    document.getElementById("value-LC1").value = Lc;
-                    document.getElementById("value-LD1").value = Ld;
-                    document.getElementById("value-a1").value = Math.round(parseFloat(a));
+                    document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                    document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                    document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                    document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                    document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                    ComplexDiagram(La, Lb, Lc, a, b, c)
                 }
                 else {
                     alert("Insufficient inputs you must enter the value of b for these set of inputs");
@@ -624,24 +651,25 @@
                 La = 180 - (Lc + Lb);
                 Ld = 90 - Lb;
                 a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                document.getElementById("value-LA1").value = La;
-                document.getElementById("value-LB1").value = Lb;
-                document.getElementById("value-LC1").value = Lc;
-                document.getElementById("value-LD1").value = Ld;
-                document.getElementById("value-a1").value = Math.round(parseFloat(a));
+                document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
 
-
+                ComplexDiagram(La, Lb, Lc, a, b, c)
             }
             if (Lc > 0 && Lb == 0 && La == 0 && Ld == 0) {
                 Lb = Math.asin((parseFloat(b) / parseFloat(c)) * Math.sin(parseFloat(Lc))) * 57.298;
                 La = 180 - (Lc + Lb);
                 Ld = 90 - Lb;
                 a = (Math.sin(parseFloat(La) * 0.0174533) / Math.sin(parseFloat(Lb) * 0.0174533)) * b;
-                document.getElementById("value-LA1").value = La;
-                document.getElementById("value-LB1").value = Lb;
-                document.getElementById("value-LC1").value = Lc;
-                document.getElementById("value-LD1").value = Ld;
-                document.getElementById("value-a1").value = Math.round(parseFloat(a));
+                document.getElementById("value-LA1").value = parseFloat(La).toFixed(2);
+                document.getElementById("value-LB1").value = parseFloat(Lb).toFixed(2);
+                document.getElementById("value-LC1").value = parseFloat(Lc).toFixed(2);
+                document.getElementById("value-LD1").value = parseFloat(Ld).toFixed(2);
+                document.getElementById("value-a1").value = (parseFloat(a)).toFixed(2);
+                ComplexDiagram(La, Lb, Lc, a, b, c)
             }
         }// end when b and c are given..
 

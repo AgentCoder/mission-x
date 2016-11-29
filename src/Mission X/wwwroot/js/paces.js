@@ -1,8 +1,10 @@
-﻿function paces(x,a){
+﻿function paces(x,a,b,c){
 
   
+    var tempB = b / 100 ;
     document.getElementById('degreeResult1').innerHTML = x
     document.getElementById('pacesResult1').innerHTML = a
+    document.getElementById('scaleResultX').innerHTML = b
     var dipdirection = document.getElementById('select111').value;
     var canvas = document.getElementById('pacescanvas');
     var gl = canvas.getContext('experimental-webgl');
@@ -59,10 +61,11 @@
 
     // Vertex shader source code
     var vertCode =
-       'attribute vec3 coordinates;' +
-       'void main(void) {' +
-          ' gl_Position = vec4(coordinates, 1.0);' +
-       '}';
+              'attribute vec4 coordinates;' +
+              'uniform mat4 u_xformMatrix;' +
+              'void main(void) {' +
+                 '  gl_Position = u_xformMatrix * coordinates;' +
+              '}';
 
     // Create a vertex shader object
     var vertShader = gl.createShader(gl.VERTEX_SHADER);
@@ -104,6 +107,23 @@
     // Use the combined shader program object
     gl.useProgram(shaderProgram);
 
+
+
+    // Shading Code Snippet
+
+    var Sx = b/10, Sy = c/10, Sz = 1.0;
+    var xformMatrix = new Float32Array([
+       Sx, 0.0, 0.0, 0.0,
+       0.0, Sy, 0.0, 0.0,
+       0.0, 0.0, Sz, 0.0,
+       0.0, 0.0, 0.0, 1.0
+    ]);
+
+    var u_xformMatrix = gl.getUniformLocation(shaderProgram, 'u_xformMatrix');
+    gl.uniformMatrix4fv(u_xformMatrix, false, xformMatrix);
+
+    // End of Code - Shading Program
+
     /*======= Associating shaders to buffer objects ======*/
 
     // Bind vertex buffer object
@@ -122,7 +142,7 @@
 
     // Clear the canvas
 
-    gl.clearColor(255, 250, 250, 0.9);
+    gl.clearColor(255, 250, 250, 0.4);
 
     // Enable the depth test
     gl.enable(gl.DEPTH_TEST);
