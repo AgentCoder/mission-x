@@ -87,7 +87,24 @@ function collectFunc(x, y) {
 
 function Azimuthal(x, y,ddSelected) {
 
-    $("#azmt").html(x + ', ' + y + ddSelected);
+    
+    if (x >= 0 &&  x <= 9)
+    {
+        x = "00" + x;
+    }
+    else if (x >= 10 && x <= 99)
+    {
+        x = "0" + x;
+    }
+    var zmth = x + ', ' + y + ddSelected;
+    $("#azmt").html(zmth);
+    var dqnt = azimuthToDipQuad(zmth)
+    $("#ddQUAD").html(dqnt);
+    var ddz = dipDipQuadrantToDipDipAzimuth(dqnt);
+    $("#ddAzum").html(ddz);
+    var _qdnt = dipDipAzimuthToQuadrant(ddz);
+    $("#qdnt").html(_qdnt);
+
 
 
     
