@@ -1,18 +1,27 @@
 ﻿
 
-var radios = document.getElementsByName("symbols");
+//var radios = document.getElementsByName("symbols");
 
-window.addEventListener("change", function () {
-
-
-    for (var i = 0; i < radios.length; i++) {
+//window.addEventListener("change", function () {
 
 
-        if (radios[i].checked) {
+//    for (var i = 0; i < radios.length; i++) {
 
-            window.alert(radios[i].value);
-        }
 
-    }
+//        if (radios[i].checked) {
 
-}, false);
+//            window.alert(radios[i].value);
+//        }
+
+//    }
+
+//}, false);
+
+
+function submit() {
+    window.alert("reached");
+}
+
+
+
+

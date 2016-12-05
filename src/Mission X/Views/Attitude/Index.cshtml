@@ -45,74 +45,58 @@
                     <tr>
 
                         @* FIRST COLOUMN OF THE TABLE *@
-                        <td style="border-right:1px solid #ddd; padding-right:2em;vertical-align:top;padding-top:3em">
+                        <td style="border-right:1px solid #ddd; padding-right:1em;vertical-align:top;padding-top:3em">
                             <form>
 
-                                <!-- Alignment table for text fields -->
-                                <table name="textfieldTable">
+                               
+                                
+                                Strike: <p id="strikeAngle"></p>
+                                <input id="strikeSlider" class="mdl-slider mdl-js-slider" type="range" min="0" max="360" value="10" tabindex="0" width="20" oninput="collectFunc(this.value,document.getElementById('dipSlider').value)" onchange="collectFunc(this.value, document.getElementById('dipSlider').value)" />
 
-                                    <!--First row of alignment table - textfieldTable -->
-                                    <tr>
+                                 
+                                
 
-                                        <td>
-                                            <div class="mdl-textfield mdl-js-textfield">
-                                                <input class="mdl-textfield__input" type="text" id="quadrant1" oninput="quadtoazu(this.value)">
-                                                <label class="mdl-textfield__label" for="quadrant1" id="quadrantlabel">Quadrant Notation</label>
+                                Dip Amount: <p id="dipAngle"></p>
+                                <input id="dipSlider" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="10" tabindex="0" width="20" oninput="collectFunc(document.getElementById('strikeSlider').value, this.value)" onchange="collectFunc(document.getElementById('strikeSlider').value, this.value)" />
+                                <br />
+                                <div id="er" style="color:red"></div><br />
+                                
 
+                                <div id="dipdirect">
+
+                                    Dip Direction:<br /><br />
+                                    <div class="form-group">
+                                        <div class="col-sm-10">
+                                            <select id="select11" class="form-control">
+                                                <option value="None">Select a Direction</option>
+                                                <option value="NW">North - West</option>
+                                                <option value="NE">North - East</option>
+                                                <option value="SE">South - East</option>
+                                                <option value="SW">South - West</option>
+                                            </select>
                                             </div>
-
-                                            <br />
-                                            <div id="quadinfo" style="color:red"></div>
-                                        </td>
-
-
-                                        <td>
-
-                                            <div class="mdl-textfield mdl-js-textfield">
-                                                <input class="mdl-textfield__input" type="text" id="azimuthal" oninput="azutoddquad(this.value)">
-                                                <label class="mdl-textfield__label" for="azimuthal" id="azimuthlabel">Azimuthal Notation</label>
-
-                                            </div>
-                                            <br />
-                                            <div id="azuinfo" style="color:red"></div>
-                                        </td>
-
-                                    </tr>
-
-                                    <!--Second row of alignment table - textfieldTable -->
-                                    <tr>
-                                        <td>
-
-                                            <div class="mdl-textfield mdl-js-textfield">
-                                                <input class="mdl-textfield__input display-4" type="text" id="ddquad" oninput="ddquadtoddazu(this.value)">
-                                                <label class="mdl-textfield__label" for="ddquad" id="dipdipquadlabel">Dip/Dip Qudrant Notation</label>
-                                            </div>
-                                            <br />
-                                            <div id="ddquadinfo" style="color:red"></div>
-
-                                        </td>
-
-
-
-
-                                        <td>
-                                            <div class="mdl-textfield mdl-js-textfield">
-                                                <input class="mdl-textfield__input" type="text" id="ddazu" oninput="ddazutoquad(this.value)">
-                                                <label class="mdl-textfield__label" for="ddazu" id="ddazulabel">Dip/Dip Azimuthal Notation</label>
-
-                                            </div>
-                                            <br />
-                                            <div id="ddazuinfo" style="color:red"></div>
-                                        </td>
-                                    </tr>
-
-                                </table>
-
-                                <!--End of table for text fields-->
-
+                                        </div>
+</div>
+                               
                                 <br />
                                 <br />
+                                
+                                <div class="container" style="width:500px">
 
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Respective Notations</div>
+                                        <div class="panel-body">
+
+                                            Quadrant:<p id="qdnt" style="font-weight:bold"></p><br />
+                                            Azimuthal:<p id="azmt"  style="font-weight:bold"></p><br />
+                                            Dip / Dip Quadrant:<p id="ddQUAD"  style="font-weight:bold"></p><br />
+                                            Dip / Dip Azimuthal:<p id="ddAzum"  style="font-weight:bold"></p>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
 
 
                                 <!-- --> @* DIVISION FOR RADIO BUTTONS *@
@@ -243,7 +227,7 @@
                         @* FIRST COLOUMN OF THE TABLE *@
                         <td style="border-right:1px solid; padding-right:2em;vertical-align:top;padding-top:3em;padding-left:2em">
 
-                            
+
 
                             <form>
 
@@ -251,34 +235,34 @@
                                 <br />
                                 <br />
 
-                                
-                                    <div id="TextBoxesGroup">
-                                        <div class="panel panel-default" id="leg1">
-                                            <div class="panel panel-heading">
-                                                Leg 1
-                                            </div>
-                                            <div class="panel panel-body">
 
-                                                <div class="form-group">
-                                                    
-                                                    <div class="col-sm-10">
-                                                        <select id="select111" class="form-control">
-                                                            <option value="NE">North - East</option>
-                                                            <option value="NW">North - West</option>
-                                                            <option value="SE">South - East</option>
-                                                            <option value="SW">South - West</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <br /><br />
-                                                Degrees: <p id="degreeResult1"></p>
-                                                <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" oninput="degreeResult(this.value)" onchange="degreeResult(this.value)"/>
-                                                Paces: <p id="pacesResult1"></p>
-                                                <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" oninput="pacesResult(this.value)" onchange="pacesResult(this.value)"/>
-                                               
-                                            </div>
+                                <div id="TextBoxesGroup">
+                                    <div class="panel panel-default" id="leg1">
+                                        <div class="panel panel-heading">
+                                            Leg 1
                                         </div>
+                                        <div class="panel panel-body">
+
+                                            <div class="form-group">
+
+                                                <div class="col-sm-10">
+                                                    <select id="select111" class="form-control">
+                                                        <option value="NE">North - East</option>
+                                                        <option value="NW">North - West</option>
+                                                        <option value="SE">South - East</option>
+                                                        <option value="SW">South - West</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <br /><br />
+                                            Degrees: <p id="degreeResult1"></p>
+                                            <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" oninput="degreeResult(this.value)" onchange="degreeResult(this.value)" />
+                                            Paces: <p id="pacesResult1"></p>
+                                            <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" oninput="pacesResult(this.value)" onchange="pacesResult(this.value)" />
+
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div style="color:red" id="error1"></div>
@@ -287,7 +271,7 @@
 
 
 
-                                
+
                                 <button class="mdl-button mdl-js-button mdl-button--fab" id="addButton" type="button">
                                     <i class="material-icons">add</i>
                                 </button>&nbsp;&nbsp;&nbsp;
@@ -300,12 +284,12 @@
 
 
                             </form>
-                                
 
-                                <br />
-                                <div id="errormsg" style="color:red"></div>
 
-                           
+                            <br />
+                            <div id="errormsg" style="color:red"></div>
+
+
                             <br />
                         </td>
 

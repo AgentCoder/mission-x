@@ -5,108 +5,98 @@
  * This function is called as soon as the document is ready and loaded.
 */
 
-$(document).ready(function () {
+function collectFunc(x, y) {
+
+
+   
+
+    $("#strikeAngle").html(x);
+    $("#dipAngle").html(y);
+    var dd = document.getElementById("select11");
+    var ddSelected = dd.options[dd.selectedIndex].value;
+
+    if (ddSelected == "None") {
+
+        $("#azmt").show();
+        $("#azmt").html("Enter the Dip Direction");
+        $("#qdnt").show();
+        $("#qdnt").html("Enter the Dip Direction");
+        $("#ddQUAD").show();
+        $("#ddQUAD").html("Enter the Dip Direction");
+        $("#ddAzum").show();
+        $("#ddAzum").html("Enter the Dip Direction");
+
+
+    }
+
+    if (((x >= 0 && x <= 90) || (x > 180 && x <= 270)) && (ddSelected == 'NE' || ddSelected == 'SW')) {
+        $("#azmt").show();
+        $("#azmt").html("Invalid Dip Direction");
+        $("#qdnt").show();
+        $("#qdnt").html("Invalid Dip Direction");
+        $("#ddQUAD").show();
+        $("#ddQUAD").html("Invalid Dip Direction");
+        $("#ddAzum").show();
+        $("#ddAzum").html("Invalid Dip Direction");
+
+        return false;
+    }
+
+    if (((x >= 90 && x <= 180) || (x > 270 && x <= 360)) && (ddSelected == 'NW' || ddSelected == 'SE')) {
+        $("#azmt").show();
+        $("#azmt").html("Invalid Dip Direction");
+        $("#qdnt").show();
+        $("#qdnt").html("Invalid Dip Direction");
+        $("#ddQUAD").show();
+        $("#ddQUAD").html("Invalid Dip Direction");
+        $("#ddAzum").show();
+        $("#ddAzum").html("Invalid Dip Direction");
+
+        return false;
+
+    }
 
 
 
 
-
-    // Counter initiated to 2.
-    var counter = 2;
-    
-
-    // Function invoked as soon as the 'Add' button is clicked.
-
-    $("#addButton").click(function () {
-
-        // Checks if counter is greater than 10, then throws an error message.
-
-        if (counter > 5) {
-            $("#errormsg").html("Limit of legs exceeded...!!!");
-            return false;
+    var radios = document.getElementsByName("symbols");
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            var checkedRadio = radios[i].value;
+            
         }
        
-        
-        
-         // If the counter is less than one - Creates a parent element 'div'.
-        var panel = $(document.createElement('div'))
-             .attr({
-                 class: "panel panel-default",
-                 id: "leg"+counter
-             });
-
-        // After creating the parent element, creates a child elements.
-        panel.after().html('<div class="panel panel-heading">Leg ' + counter + '</div>'+
-                            '<div class="panel panel-body">'+
-                            '<div class="form-group">'+
-                                                    
-                                                   '<div class="col-sm-10">'+
-                                                        '<select id="select111" class="form-control">'+
-                                                            '<option value="NE">North - East</option>'+
-                                                           ' <option value="NW">North - West</option>'+
-                                                           ' <option value="SE">South - East</option>'+
-                                                           ' <option value="SW">South - West</option>'+
-                                                       ' </select>'+
-                                                  '</div>'+
-                                               '</div>' + '<br/><br/>Degrees: <p id="degreeResult' + counter + '">');
-
-        
-        
-
-        // Appending of child elements.
-        panel.appendTo("#TextBoxesGroup");
-
-        // Incrementing the counter.
-        counter++;
-
-        // End of function that handles Add button.
-    });
+    }
 
 
-    // Button clicked as soon as the 'Delete' button is clicked.
+    if (x == 0 || y == 0) {
+        $("#er").show();
+        $("#er").html("Enter strike and dip values");
+        return false;
+    }
+    else {
+        $("#er").hide();
+        $("#azmt").html("");
+        $("#qdnt").html("");
+        $("#ddQUAD").html("");
+        $("#ddAzum").html("");
+        Azimuthal(x, y,ddSelected);
+    }
 
-    $("#removeButton").click(function () {
+}
 
-        $("#errormsg").hide();
+function Azimuthal(x, y,ddSelected) {
 
-        // Checks the counter if less than 1 - Throws an error.
-        if (counter == 1) {
-            alert("No more directions to remove");
-            return false;
-        }
-
-            // Else decrements the counter and removes the respective child element.
-
-        else {
-
-
-
-            counter--;
-            $("#leg" + counter).remove();
-        }
+    $("#azmt").html(x + ', ' + y + ddSelected);
 
 
-
-        // End of function that handles remove button
-
-    });
-
-
-    // End of document ready function.
-});
-
-
-
-function degreeResult(x) {
-
-    $("#degreeResult1").html(x);
-
+    
 }
 
 
 
-function pacesResult(x) {
 
-    $("#pacesResult1").html(x);
-}
+
+
+
 
