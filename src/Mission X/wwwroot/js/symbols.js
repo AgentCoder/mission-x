@@ -16,12 +16,3 @@
 //    }
 
 //}, false);
-
-
-function submit() {
-    window.alert("reached");
-}
-
-
-
-
