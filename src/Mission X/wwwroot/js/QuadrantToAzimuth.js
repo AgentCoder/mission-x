@@ -4,7 +4,7 @@
 
 
 
-function quadrantToAzimuth(x) {
+function quadrantToAzimuth(x,y) {
    
     var quadNot = x;
 
@@ -42,10 +42,17 @@ function quadrantToAzimuth(x) {
     
     
     // window.alert(generatedValue + quadNot.substr(4));
+    if (y == 1 || y == 4) {
+        generateFigure(strikeangle, dipdirection);
 
-    generateFigure(strikeangle, dipdirection);
+    }
+   else if(y == 2 || y ==5)
+   {
+       generateLineFigure(strikeangle, dipdirection);
 
-    return generatedValue + quadNot.substr(4);
+   }
+
+    //return generatedValue + quadNot.substr(4);
     
 }
 
@@ -60,7 +67,7 @@ function generateFigure(angle, dipdirection) {
         if(dipdirection == "NE")
     {
             x_dippoint = 0.2;
-            y_dippoint = -0.2;
+            y_dippoint = 0.2;
     }
 
         else if (dipdirection == "NW")

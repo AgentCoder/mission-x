@@ -12,6 +12,7 @@
 /// <reference path="js/dynamic.js" />
 /// <reference path="js/figure.js" />
 /// <reference path="js/imagedownload.js" />
+/// <reference path="js/linefigure.js" />
 /// <reference path="js/multipletriangle.js" />
 /// <reference path="js/paces.js" />
 /// <reference path="js/quadranttoazimuth.js" />
