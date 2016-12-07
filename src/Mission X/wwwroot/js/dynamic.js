@@ -59,14 +59,14 @@ function collectFunc(x, y) {
 
 
 
-    var radios = document.getElementsByName("symbols");
-    for (var i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-            var checkedRadio = radios[i].value;
+    //var radios = document.getElementsByName("symbols");
+    //for (var i = 0; i < radios.length; i++) {
+    //    if (radios[i].checked) {
+    //        var checkedRadio = radios[i].value;
             
-        }
+    //    }
        
-    }
+    //}
 
 
     if (x == 0 || y == 0) {
@@ -104,6 +104,17 @@ function Azimuthal(x, y,ddSelected) {
     $("#ddAzum").html(ddz);
     var _qdnt = dipDipAzimuthToQuadrant(ddz);
     $("#qdnt").html(_qdnt);
+    var radios = document.getElementsByName("symbols");
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            var checkedRadio = radios[i].value;
+
+        }
+
+    }
+    
+    quadrantToAzimuth(_qdnt, checkedRadio);
+    
 
 
 
