@@ -229,7 +229,7 @@
 
 
 
-                            <form>
+                            <form class="form-inline">
 
                                 <span>Please enter the direction for the Leg(s)</span>
                                 <br />
@@ -237,13 +237,14 @@
 
 
                                 <div id="TextBoxesGroup">
+
                                     <div class="panel panel-default" id="leg1">
                                         <div class="panel panel-heading">
                                             Leg 1
                                         </div>
                                         <div class="panel panel-body">
 
-                                            <div class="form-group">
+                                            <div class="form-group" id="dd1">
 
                                                 <div class="col-sm-10">
                                                     <select id="select111" class="form-control">
@@ -253,42 +254,145 @@
                                                         <option value="SW">South - West</option>
                                                     </select>
                                                 </div>
+
                                             </div>
 
                                             <br /><br />
                                             Degrees: <p id="degreeResult1"></p>
-                                            <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0" tabindex="0" oninput="degreeResult(this.value)" onchange="degreeResult(this.value)" />
+                                            <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
+                                                   oninput="paces(this.value, document.getElementById('slider12').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces(this.value, document.getElementById('slider12').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
                                             Paces: <p id="pacesResult1"></p>
-                                            <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0" oninput="pacesResult(this.value)" onchange="pacesResult(this.value)" />
+                                            <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
+                                                   oninput="paces(document.getElementById('slider11').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces(document.getElementById('slider11').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+
+
+
 
                                         </div>
                                     </div>
+
+                                    <div class="panel panel-default" id="leg2">
+                                        <div class="panel panel-heading">
+                                            Leg 2
+                                        </div>
+                                        <div class="panel panel-body">
+
+                                            <div class="form-group" id="dd2">
+
+                                                <div class="col-sm-10">
+                                                    <select id="select112" class="form-control">
+                                                        <option value="NE">North - East</option>
+                                                        <option value="NW">North - West</option>
+                                                        <option value="SE">South - East</option>
+                                                        <option value="SW">South - West</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <br /><br />
+                                            Degrees: <p id="degreeResult2"></p>
+                                            <input id="slider21" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
+                                                   oninput="paces2(this.value, document.getElementById('slider22').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces2(this.value, document.getElementById('slider22').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                            Paces: <p id="pacesResult2"></p>
+                                            <input id="slider22" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
+                                                   oninput="paces2(document.getElementById('slider21').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces2(document.getElementById('slider21').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default" id="leg3">
+                                        <div class="panel panel-heading">
+                                            Leg 3
+                                        </div>
+                                        <div class="panel panel-body">
+
+                                            <div class="form-group" id="dd3">
+
+                                                <div class="col-sm-10">
+                                                    <select id="select111" class="form-control">
+                                                        <option value="NE">North - East</option>
+                                                        <option value="NW">North - West</option>
+                                                        <option value="SE">South - East</option>
+                                                        <option value="SW">South - West</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <br /><br />
+                                            Degrees: <p id="degreeResult3"></p>
+                                            <input id="slider31" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
+                                                   oninput="paces(this.value, document.getElementById('slider32').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces(this.value, document.getElementById('slider32').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                            Paces: <p id="pacesResult3"></p>
+                                            <input id="slider32" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
+                                                   oninput="paces(document.getElementById('slider31').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces(document.getElementById('slider31').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="panel panel-default" id="leg4">
+                                        <div class="panel panel-heading">
+                                            Leg 4
+                                        </div>
+                                        <div class="panel panel-body">
+
+                                            <div class="form-group" id="dd4">
+
+                                                <div class="col-sm-10">
+                                                    <select id="select111" class="form-control">
+                                                        <option value="NE">North - East</option>
+                                                        <option value="NW">North - West</option>
+                                                        <option value="SE">South - East</option>
+                                                        <option value="SW">South - West</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <br /><br />
+                                            Degrees: <p id="degreeResult4"></p>
+                                            <input id="slider41" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
+                                                   oninput="paces(this.value, document.getElementById('slider42').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces(this.value, document.getElementById('slider42').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                            Paces: <p id="pacesResult4"></p>
+                                            <input id="slider42" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
+                                                   oninput="paces(document.getElementById('slider41').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
+                                                   onchange="paces(document.getElementById('slider41').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+
+
+
+
+                                        </div>
+                                    </div>
+
                                 </div>
 
+
+
+
+
+
+
+
                                 <div style="color:red" id="error1"></div>
-
-
-
-
-
-
-                                <button class="mdl-button mdl-js-button mdl-button--fab" id="addButton" type="button">
-                                    <i class="material-icons">add</i>
-                                </button>&nbsp;&nbsp;&nbsp;
-                                <button class="mdl-button mdl-js-button mdl-button--fab" id="removeButton" type="button">
-                                    <i class="material-icons">delete</i>
-                                </button>
-
-
-
 
 
                             </form>
 
 
                             <br />
-                            <div id="errormsg" style="color:red"></div>
-
 
                             <br />
                         </td>
@@ -314,9 +418,30 @@
 
                             <div class="container" style="width:580px">
 
+
+                                Scale:
+                                <p id="scaleResultX"></p>
+                                <p id="scaleResultY"></p>
+
+                                <p style="width:200px">
+
+
+                                    <input id="slider13" class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5"
+                                           tabindex="0" oninput="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, this.value, document.getElementById('slider14').value)"
+                                           onchange="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, this.value, document.getElementById('slider12').value)" />
+
+
+                                    <input id="slider14" class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5"
+                                           tabindex="0" oninput="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, document.getElementById('slider13').value, this.value)"
+                                           onchange="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, document.getElementById('slider13').value, this.value)" />
+                                </p>
+
+
+
+
                                 <div class="panel panel-success">
                                     <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
-                                    <div class="panel-body"><center> <canvas width="300" height="300" id="my_Canvas1"></canvas></center></div>
+                                    <div class="panel-body"><center> <canvas width="300" height="300" id="pacescanvas"></canvas></center></div>
                                 </div>
                             </div>
 
@@ -325,8 +450,7 @@
 
 
                             <!-- Raised button with ripple -->
-
-                            <div id="downloads1"></div>
+                            @*<div id="downloads1"></div>*@
 
                             <br />
                             <br />
@@ -346,11 +470,15 @@
             </div>
 
             <!--End of success panel-->
+
+            <div id="result"></div>
         </div>
 
 
         @* END OF WITHOUT SYMBOLS TAB *@
     </div>
+
+
 
     @* END OF PAGE - SIMPLE PLAN VIEW *@
 </div>

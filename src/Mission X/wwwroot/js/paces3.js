@@ -1,21 +1,10 @@
-﻿
+﻿function paces3(x, a, b, c) {
 
 
-function paces(x, a, b, c) {
-
-
-    var a2 = document.getElementById("degreeResult2").value;
-    var a3 = document.getElementById("degreeResult3").value;
-    var a4 = document.getElementById("degreeResult4").value;
-    var b2 = document.getElementById("pacesResult2").value;
-    var b3 = document.getElementById("pacesResult3").value;
-    var b4 = document.getElementById("pacesResult4").value;
-  
-    var tempB = b / 100 ;
+    var tempB = b / 100;
     document.getElementById('degreeResult1').innerHTML = x
     document.getElementById('pacesResult1').innerHTML = a
     document.getElementById('scaleResultX').innerHTML = b
-
     var dipdirection = document.getElementById('select111').value;
     var canvas = document.getElementById('pacescanvas');
     var gl = canvas.getContext('experimental-webgl');
@@ -47,14 +36,14 @@ function paces(x, a, b, c) {
         x_dippoint = x_cordinate;
         y_dippoint = -y_cordinate;
     }
-   
+
 
 
 
     var vertices = [
-       0.0,0.0,0.0,
+       0.0, 0.0, 0.0,
        x_dippoint * (a * 0.05), y_dippoint * (a * 0.05), 0.0
-     ]
+    ]
 
     // Create an empty buffer object
     var vertex_buffer = gl.createBuffer();
@@ -122,7 +111,7 @@ function paces(x, a, b, c) {
 
     // Shading Code Snippet
 
-    var Sx = b/10, Sy = c/10, Sz = 1.0;
+    var Sx = b / 10, Sy = c / 10, Sz = 1.0;
     var xformMatrix = new Float32Array([
        Sx, 0.0, 0.0, 0.0,
        0.0, Sy, 0.0, 0.0,
@@ -170,8 +159,6 @@ function paces(x, a, b, c) {
 
     // POINTS, LINE_STRIP, LINE_LOOP, LINES,
     // TRIANGLE_STRIP,TRIANGLE_FAN, TRIANGLES
-
-    paces2(a2,b2,b,c);
 
 
 }
