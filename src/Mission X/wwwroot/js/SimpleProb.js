@@ -16,7 +16,7 @@ function myFunction() {
     var La = document.getElementById("quadrant4").value;
     var Lc = document.getElementById("quadrant6").value;
     
-
+   
     // only sides
     if (document.getElementById("option-1").checked) {
         

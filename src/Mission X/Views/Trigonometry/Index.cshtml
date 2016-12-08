@@ -134,15 +134,26 @@
                         </div>
                         <br/>
                         <br />
-                            <div class="col-sm-8">
+                        <div class="col-sm-3">
+                           <b>units   : </b>
+                            <select id="Distance">
+                                
+                                <option value="m" id="Meters">Meters</option>
+                                <option value="mi" id="Miles">Miles</option>
+                                <option value="km" id="Kilometres">Kilometers</option>
+                                <option value="cm" id="Centi">Centimeters</option>
+                            </select>
+                        </div>
+                            <div class="col-sm-5">
 
                                 <div class="panel panel-success">
                                     
                                     <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
                                     <div class="panel-body"><center> 
-                                        <canvas width="500" height="500" id="my_Canvas">
+                                        <canvas width="400" height="400" id="Simple_Canvas">
                                                                          
                                         </canvas></center>
+                                        <a id="download" onclick="down()">Download as image</a>
                                     </div>
                                 </div>
 
@@ -160,8 +171,10 @@
                                 <button type="button" id="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
                                     Submit
                                 </button>
+                                
                             </center>
                         </div>
+
                         <div class="col-sm-6">
                             <center>
                                 <button type="button" id="reload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="refresh()">
@@ -268,9 +281,18 @@
                             <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction2()">
                                 Submit
                             </button>
+                            
                         </center>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-3">
+                        <b>units   : </b>
+                        <select id="Distance1">
+
+                            <option value="m" id="Meters">Meters</option>
+                            <option value="mi" id="Miles">Miles</option>
+                            <option value="km" id="Kilometres">Kilometers</option>
+                            <option value="cm" id="Centi">Centimeters</option>
+                        </select>
                     </div>
                     
                         <div class="col-sm-6">
@@ -279,13 +301,14 @@
                                 <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
                                 <div class="panel-body">
                                     <center>
-                                        <canvas width="500" height="500" id="my_Canvas2"></canvas>
+                                        <canvas width="330" height="400" id="my_Canvas2"></canvas>
+                                        <a id="download" onclick="down()">Download as image</a>
                                     </center>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        @*<div class="col-sm-2">
                             <button id="help1" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin1('/images/multiple.png')">
                                 <i class="material-icons">?</i>
                             </button>
@@ -293,7 +316,7 @@
                             <div class="mdl-tooltip" data-mdl-for="help1">
                                 Help
                             </div>
-                        </div>
+                        </div>*@
 
                     </div>
             </form>
@@ -377,7 +400,16 @@
 
                     </div>
 
-                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        <b>units   : </b>
+                        <select id="Distance2">
+
+                            <option value="m" id="Meters">Meters</option>
+                            <option value="mi" id="Miles">Miles</option>
+                            <option value="km" id="Kilometres">Kilometers</option>
+                            <option value="cm" id="Centi">Centimeters</option>
+                        </select>
+                    </div>
                     <div class="col-sm-6">
                         <div class="panel panel-success">
 
@@ -390,7 +422,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    @*<div class="col-sm-2">
                         <button id="help2" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin2('/images/Complex.png')">
                             <i class="material-icons">?</i>
                         </button>
@@ -398,7 +430,7 @@
                         <div class="mdl-tooltip" data-mdl-for="help2">
                             Help
                         </div>
-                    </div>
+                    </div>*@
 
 
                 </div>
