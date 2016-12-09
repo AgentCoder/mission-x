@@ -1,60 +1,49 @@
-﻿
+﻿function generateLineFigure(angle, dipdirection) {
+    var radians = Number(angle) * (Math.PI / 180);
+    var y_cordinate = Math.sin(radians);
+    var x_cordinate = Math.cos(radians);
+    var x_dippoint = 0.0;
+    var y_dippoint = 0.0;
+    if (dipdirection == "NE") {
+        x_dippoint = 0.2;
+        y_dippoint = 0.2;
+    }
 
+    else if (dipdirection == "NW") {
+        x_dippoint = -0.2;
+        y_dippoint = 0.2;
+    }
+    else if (dipdirection == "SW") {
+        x_dippoint = -0.2;
+        y_dippoint = -0.2;
+    }
+    else if (dipdirection == "SE") {
+        x_dippoint = 0.2;
+        y_dippoint = -0.2;
+    }
+    else {
+        window.alert("invalid dipdirection");
+    }
 
-function paces(x, a, b, c) {
-
-
-    var a2 = document.getElementById("degreeResult2").value;
-    var a3 = document.getElementById("degreeResult3").value;
-    var a4 = document.getElementById("degreeResult4").value;
-    var b2 = document.getElementById("pacesResult2").value;
-    var b3 = document.getElementById("pacesResult3").value;
-    var b4 = document.getElementById("pacesResult4").value;
-  
-    var tempB = b / 100 ;
-    document.getElementById('degreeResult1').innerHTML = x
-    document.getElementById('pacesResult1').innerHTML = a
-    document.getElementById('scaleResultX').innerHTML = b
-
-    var dipdirection = document.getElementById('select111').value;
-    var canvas = document.getElementById('pacescanvas');
+    var canvas = document.getElementById('my_Canvas');
     var gl = canvas.getContext('experimental-webgl');
 
 
     /*======= Defining and storing the geometry ======*/
 
-    var radians = Number(x) * (Math.PI / 180);
-    var x_cordinate = Math.sin(radians);
-    var y_cordinate = Math.cos(radians);
-    var x_dippoint = 0.0;
-    var y_dippoint = 0.0;
-    var x_origin = 0.0;
-    var y_origin = 0.0;
-    if (dipdirection == "NE") {
-        x_dippoint = x_cordinate;
-        y_dippoint = y_cordinate;
-    }
-
-    else if (dipdirection == "NW") {
-        x_dippoint = -x_cordinate;
-        y_dippoint = y_cordinate;
-    }
-    else if (dipdirection == "SW") {
-        x_dippoint = -x_cordinate;
-        y_dippoint = -y_cordinate;
-    }
-    else if (dipdirection == "SE") {
-        x_dippoint = x_cordinate;
-        y_dippoint = -y_cordinate;
-    }
-   
-
-
-
     var vertices = [
-       0.0,0.0,0.0,
-       x_dippoint * (a * 0.05), y_dippoint * (a * 0.05), 0.0
-     ]
+       -1.0, 0.0, 0,
+       1.0, 0.0, 0,
+       0.0, -1.0, 0,
+       0.0, 1.0, 0,
+       x_cordinate, y_cordinate, 0,
+       0.0, 0.0, 0,
+       -x_cordinate, -y_cordinate, 0,
+       0.0, 0.0, 0,
+       x_dippoint, y_dippoint, 0,
+       0.0, 0.0, 0
+
+    ]
 
     // Create an empty buffer object
     var vertex_buffer = gl.createBuffer();
@@ -72,11 +61,10 @@ function paces(x, a, b, c) {
 
     // Vertex shader source code
     var vertCode =
-              'attribute vec4 coordinates;' +
-              'uniform mat4 u_xformMatrix;' +
-              'void main(void) {' +
-                 '  gl_Position = u_xformMatrix * coordinates;' +
-              '}';
+       'attribute vec3 coordinates;' +
+       'void main(void) {' +
+          ' gl_Position = vec4(coordinates, 1.0);' +
+       '}';
 
     // Create a vertex shader object
     var vertShader = gl.createShader(gl.VERTEX_SHADER);
@@ -90,7 +78,7 @@ function paces(x, a, b, c) {
     // Fragment shader source code
     var fragCode =
        'void main(void) {' +
-          'gl_FragColor = vec4(0.0, 0.0, 0.0, 1);' +
+          'gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);' +
        '}';
 
     // Create fragment shader object
@@ -118,23 +106,6 @@ function paces(x, a, b, c) {
     // Use the combined shader program object
     gl.useProgram(shaderProgram);
 
-
-
-    // Shading Code Snippet
-
-    var Sx = b/10, Sy = c/10, Sz = 1.0;
-    var xformMatrix = new Float32Array([
-       Sx, 0.0, 0.0, 0.0,
-       0.0, Sy, 0.0, 0.0,
-       0.0, 0.0, Sz, 0.0,
-       0.0, 0.0, 0.0, 1.0
-    ]);
-
-    var u_xformMatrix = gl.getUniformLocation(shaderProgram, 'u_xformMatrix');
-    gl.uniformMatrix4fv(u_xformMatrix, false, xformMatrix);
-
-    // End of Code - Shading Program
-
     /*======= Associating shaders to buffer objects ======*/
 
     // Bind vertex buffer object
@@ -152,8 +123,7 @@ function paces(x, a, b, c) {
     /*============ Drawing the triangle =============*/
 
     // Clear the canvas
-
-    gl.clearColor(255, 250, 250, 0.4);
+    gl.clearColor(0.5, 0.5, 0.5, 0.9);
 
     // Enable the depth test
     gl.enable(gl.DEPTH_TEST);
@@ -165,13 +135,12 @@ function paces(x, a, b, c) {
     gl.viewport(0, 0, canvas.width, canvas.height);
 
     // Draw the triangle
-    gl.drawArrays(gl.LINES, 0, 2);
+    gl.drawArrays(gl.LINES, 0, 10);
+    //gl.drawArrays(gl.LINES, 4, 4);
+    //gl.drawArrays(gl.TRIANGLE_STRIP, 8, 3);
 
 
-    // POINTS, LINE_STRIP, LINE_LOOP, LINES,
-    // TRIANGLE_STRIP,TRIANGLE_FAN, TRIANGLES
 
-    paces2(a2,b2,b,c);
 
 
 }
