@@ -9,7 +9,7 @@
         var img;
         function openWin(img)
         {
-          
+
            window.open(img,"mywin","menubar=0,resizable=0,width=400,height=300");
         }
         function openWin1(img) {
@@ -24,73 +24,190 @@
 
 </head>
 <body>
-<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-    <div class="mdl-tabs__tab-bar">
-        <a href="#simple-panel" class="mdl-tabs__tab is-active">Simple Problems</a>
-        <a href="#multiple-panel" class="mdl-tabs__tab">Multiple Triangle Problems</a>
-        <a href="#complex-panel" class="mdl-tabs__tab">Complex Problems</a>
-    </div>
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+            <a href="#simple-panel" class="mdl-tabs__tab is-active">Simple Problems</a>
+            <a href="#multiple-panel" class="mdl-tabs__tab">Multiple Triangle Problems</a>
+            <a href="#complex-panel" class="mdl-tabs__tab">Complex Problems</a>
+        </div>
 
 
 
-    @*Simple Problems*@
-    <div class="mdl-tabs__panel is-active" id="simple-panel">
+        @*Simple Problems*@
+        <div class="mdl-tabs__panel is-active" id="simple-panel">
 
-        <div class="panel panel-success">
+            <div class="panel panel-success">
 
-            <div class="mdl-card__title">
-                <div class="mdl-card__title-text">Simple Plan View Problems</div>
-            </div>
-
-            <div class="mdl-card__supporting-text"><h4>Please enter the respective notation to get the equivalent notations.</h4></div>
-
-
-
-            @*radio buttons*@
-            <div class="col-sm-10">
-                <br />
-
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                    <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" onclick="option1()">
-                    <span class="mdl-radio__label">only sides</span>
-                </label>
-                &nbsp;
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                    <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" onclick="option2()">
-                    <span class="mdl-radio__label">only angles</span>
-                </label>
-                &nbsp;
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                    <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" onclick="option3()">
-                    <span class="mdl-radio__label">Finding sides using sides and angles</span>
-                </label>
-                &nbsp;
-                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                    <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" onclick="option4()">
-                    <span class="mdl-radio__label">Finding angles using sides</span>
-                </label>
-                
-            </div>
-            <div class="col-sm-2">
-                <br/>
-               
-
-                
-                <button id="help" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin('/images/Triangle.png')" >
-                    <i class="material-icons">?</i>
-                </button>
-                
-                <div class="mdl-tooltip" data-mdl-for="help">
-                    Reference Diagram
+                <div class="mdl-card__title">
+                    <div class="mdl-card__title-text">Simple Plan View Problems</div>
                 </div>
-             </div>
+
+                <div class="mdl-card__supporting-text"><h4>Please enter the respective notation to get the equivalent notations.</h4></div>
+
+
+
+                @*radio buttons*@
+                <div class="col-sm-10">
+                    <br />
+
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                        <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" onclick="option1()">
+                        <span class="mdl-radio__label">only sides</span>
+                    </label>
+                    &nbsp;
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                        <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" onclick="option2()">
+                        <span class="mdl-radio__label">only angles</span>
+                    </label>
+                    &nbsp;
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                        <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" onclick="option3()">
+                        <span class="mdl-radio__label">Finding sides using sides and angles</span>
+                    </label>
+                    &nbsp;
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                        <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" onclick="option4()">
+                        <span class="mdl-radio__label">Finding angles using sides</span>
+                    </label>
+
+                </div>
+                <div class="col-sm-2">
+                    <br />
+
+
+
+                    <button id="help" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin('/images/Triangle.png')">
+                        <i class="material-icons">?</i>
+                    </button>
+
+                    <div class="mdl-tooltip" data-mdl-for="help">
+                        Reference Diagram
+                    </div>
+                </div>
 
 
 
 
 
-            <div class="mdl-card__actions mdl-card--border">
+                <div class="mdl-card__actions mdl-card--border">
 
+
+                    <form action="#">
+                        <br />
+                        <br>
+
+                        <div class="container text-center">
+                            <div class="col-sm-3">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="quadrant1" oninput="ValidToA(this.value)">
+                                    <label class="mdl-textfield__label" for="quadrant1" id="sidea" onchange="">Enter a value</label>
+                                    <p id="Sa" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="quadrant2" oninput="ValidToB(this.value)">
+                                    <label class="mdl-textfield__label" for="quadrant2" id="sideb">Enter b value</label>
+                                    <p id="Sb" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="quadrant3" oninput="ValidToC(this.value)">
+                                    <label class="mdl-textfield__label" for="quadrant3" id="sidec">Enter c value</label>
+                                    <p id="Sc" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="quadrant4" oninput="ValidToLA(this.value)">
+                                    <label class="mdl-textfield__label" for="quadrant4" id="sideLa">Enter angle A</label>
+                                    <p id="SLa" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="quadrant6" oninput="ValidToLC(this.value)">
+                                    <label class="mdl-textfield__label" for="quadrant6" id="sideLc">Enter angle C</label>
+                                    <p id="SLc" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="col-sm-3">
+                                <b>units   : </b>
+                                <select id="Distance">
+
+                                    <option value="m" id="Meters">Meters</option>
+                                    <option value="mi" id="Miles">Miles</option>
+                                    <option value="km" id="Kilometres">Kilometers</option>
+                                    <option value="cm" id="Centi">Centimeters</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-5">
+
+                                <div class="panel panel-success">
+
+                                    <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
+                                    <div class="panel-body">
+                                        <center>
+                                            <canvas width="400" height="400" id="Simple_Canvas"></canvas>
+                                        </center>
+                                        <a id="download" onclick="down()">Download as image</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-1">
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="container text-center">
+                            <div class="col-sm-6">
+                                <center>
+                                    <button type="button" id="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
+                                        Submit
+                                    </button>
+
+                                </center>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <center>
+                                    <button type="button" id="reload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="refresh()">
+                                        reload
+                                    </button>
+                                </center>
+                            </div>
+                        </div>
+                    </form>
+                    <br />
+                    <br />
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+        @*Multiple Triangle Problems*@
+        <div class="mdl-tabs__panel" id="multiple-panel">
+
+            <div class="panel panel-success">
 
                 <form action="#">
                     <br />
@@ -99,80 +216,230 @@
                     <div class="container text-center">
                         <div class="col-sm-3">
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="quadrant1" oninput="ValidToA(this.value)">
-                                <label class="mdl-textfield__label" for="quadrant1" id="sidea" onchange="">Enter a value</label>
-                                <p id="Sa" style="color : red; font : bold 18px arial,verdana;"></p>
+                                <input class="mdl-textfield__input" type="text" id="value-a" name="quadrant1" oninput="ValidToMa(this.value)">
+                                <label class="mdl-textfield__label" for="value-a">Enter a value</label>
+                                <p id="Ma" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="quadrant2" oninput="ValidToB(this.value)">
-                                <label class="mdl-textfield__label" for="quadrant2" id="sideb">Enter b value</label>
-                                <p id="Sb" style="color : red; font : bold 18px arial,verdana;"></p>
+                                <input class="mdl-textfield__input" type="text" id="value-b" oninput="ValidToMb(this.value)">
+                                <label class="mdl-textfield__label" for="value-b">Enter b value</label>
+                                <p id="Mb" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="quadrant3" oninput="ValidToC(this.value)">
-                                <label class="mdl-textfield__label" for="quadrant3" id="sidec">Enter c value</label>
-                                <p id="Sc" style="color : red; font : bold 18px arial,verdana;"></p>
+                                <input class="mdl-textfield__input" type="text" id="value-c" oninput="ValidToMc(this.value)">
+                                <label class="mdl-textfield__label" for="value-c">Enter c value</label>
+                                <p id="Mc" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="quadrant4" oninput="ValidToLA(this.value)">
-                                <label class="mdl-textfield__label" for="quadrant4" id="sideLa">Enter angle A</label>
-                                <p id="SLa" style="color : red; font : bold 18px arial,verdana;"></p>
+                                <input class="mdl-textfield__input" type="text" id="value-d" oninput="ValidToMd(this.value)">
+                                <label class="mdl-textfield__label" for="value-d">Enter d value</label>
+                                <p id="Md" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
                             <br />
                             <br />
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="quadrant6" oninput="ValidToLC(this.value)">
-                                <label class="mdl-textfield__label" for="quadrant6" id="sideLc">Enter angle C</label>
-                                <p id="SLc" style="color : red; font : bold 18px arial,verdana;"></p>
+                                <input class="mdl-textfield__input" type="text" id="value-e" oninput="ValidToMe(this.value)">
+                                <label class="mdl-textfield__label" for="value-e">Enter e value</label>
+                                <p id="Me" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
-                        </div>
-                        <br/>
-                        <br />
-                            <div class="col-sm-8">
-
-                                <div class="panel panel-success">
-                                    
-                                    <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
-                                    <div class="panel-body"><center> 
-                                        <canvas width="500" height="500" id="my_Canvas">
-                                                                         
-                                        </canvas></center>
-                                    </div>
-                                </div>
-
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-f" oninput="ValidToMf(this.value)">
+                                <label class="mdl-textfield__label" for="value-f">Enter f value</label>
+                                <p id="Mf" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
-                        <div class="col-sm-1">
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LA" oninput="ValidToMLa(this.value)">
+                                <label class="mdl-textfield__label" for="value-LA">Enter angle A</label>
+                                <p id="MLa" style="color : red; font : bold 18px arial,verdana;"></p>
                             </div>
-                        </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LC" oninput="ValidToMLc(this.value)">
+                                <label class="mdl-textfield__label" for="value-LC">Enter angle C</label>
+                                <p id="MLc" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LD" oninput="ValidToMLd(this.value)">
+                                <label class="mdl-textfield__label" for="value-LD">Enter angle D</label>
+                                <p id="MLd" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
 
-
-
-
-                    <div class="container text-center">
-                        <div class="col-sm-6">
                             <center>
-                                <button type="button" id="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">
+                                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction2()">
                                     Submit
                                 </button>
+
                             </center>
+                        </div>
+                        <div class="col-sm-3">
+                            <b>units   : </b>
+                            <select id="Distance1">
+
+                                <option value="m" id="Meters">Meters</option>
+                                <option value="mi" id="Miles">Miles</option>
+                                <option value="km" id="Kilometres">Kilometers</option>
+                                <option value="cm" id="Centi">Centimeters</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="panel panel-success">
+
+                                <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
+                                <div class="panel-body">
+                                    <center>
+                                        <canvas width="330" height="400" id="my_Canvas2"></canvas>
+                                        <a id="download" onclick="down()">Download as image</a>
+                                    </center>
+
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-sm-2">
+                                <button id="help1" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin1('/images/multiple.png')">
+                                    <i class="material-icons">?</i>
+                                </button>
+
+                                <div class="mdl-tooltip" data-mdl-for="help1">
+                                    Help
+                                </div>
+                            </div>*@
+
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+        </div>
+
+
+        @*Complex problems*@
+        <div class="mdl-tabs__panel" id="complex-panel">
+
+            <div class="panel panel-success">
+
+                <form action="#">
+                    <br />
+                    <br>
+
+                    <div class="container text-center">
+                        <div class="col-sm-3">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-a1" name="quadrant1" oninput="ValidToCa(this.value)">
+                                <label class="mdl-textfield__label" for="value-a1">Enter a value</label>
+
+                                <p id="Ca" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-b1" oninput="ValidToCb(this.value)">
+                                <label class="mdl-textfield__label" for="value-b1">Enter b value</label>
+                                <p id="Cb" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-c1" oninput="ValidToCc(this.value)">
+                                <label class="mdl-textfield__label" for="value-c1">Enter c value</label>
+                                <p id="Cc" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-d1" oninput="ValidToCd(this.value)">
+                                <label class="mdl-textfield__label" for="value-d1">Enter d value</label>
+                                <p id="Cd" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LA1" oninput="ValidToCLa(this.value)">
+                                <label class="mdl-textfield__label" for="value-LA1">Enter angle A</label>
+                                <p id="CLa" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LB1" oninput="ValidToCLb(this.value)">
+                                <label class="mdl-textfield__label" for="value-LB1">Enter angle B</label>
+                                <p id="CLb" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LC1" oninput="ValidToCLc(this.value)">
+                                <label class="mdl-textfield__label" for="value-LC1">Enter angle C</label>
+                                <p id="CLc" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="value-LD1" oninput="ValidToCLd(this.value)">
+                                <label class="mdl-textfield__label" for="value-LD1">Enter angle D</label>
+                                <p id="CLd" style="color : red; font : bold 18px arial,verdana;"></p>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-sm-3">
+                            <b>units   : </b>
+                            <select id="Distance2">
+
+                                <option value="m" id="Meters">Meters</option>
+                                <option value="mi" id="Miles">Miles</option>
+                                <option value="km" id="Kilometres">Kilometers</option>
+                                <option value="cm" id="Centi">Centimeters</option>
+                            </select>
                         </div>
                         <div class="col-sm-6">
-                            <center>
-                                <button type="button" id="reload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="refresh()">
-                                    reload
+                            <div class="panel panel-success">
+
+                                <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
+                                <div class="panel-body">
+                                    <center>
+                                        <canvas width="500" height="400" id="3canvas"></canvas>
+                                    </center>
+
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="col-sm-2">
+                                <button id="help2" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin2('/images/Complex.png')">
+                                    <i class="material-icons">?</i>
                                 </button>
-                            </center>
-                        </div>
-                        </div>
-</form>
-                <br />
-                <br />
+
+                                <div class="mdl-tooltip" data-mdl-for="help2">
+                                    Help
+                                </div>
+                            </div>*@
+
+
+                    </div>
+                    <center>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction3()">
+                            Submit
+                        </button>
+                    </center>
+                </form>
 
 
 
@@ -181,245 +448,10 @@
             </div>
 
 
-        </div>
-
-
-
-
-
-    </div>
-
-
-
-    @*Multiple Triangle Problems*@
-    <div class="mdl-tabs__panel" id="multiple-panel">
-
-        <div class="panel panel-success">
-
-            <form action="#">
-                <br />
-                <br>
-
-                <div class="container text-center">
-                    <div class="col-sm-3">
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-a" name="quadrant1" oninput="ValidToMa(this.value)">
-                            <label class="mdl-textfield__label" for="value-a">Enter a value</label>
-                            <p id="Ma" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-b" oninput="ValidToMb(this.value)">
-                            <label class="mdl-textfield__label" for="value-b">Enter b value</label>
-                            <p id="Mb" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-c" oninput="ValidToMc(this.value)">
-                            <label class="mdl-textfield__label" for="value-c">Enter c value</label>
-                            <p id="Mc" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-d" oninput="ValidToMd(this.value)">
-                            <label class="mdl-textfield__label" for="value-d">Enter d value</label>
-                            <p id="Md" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-e" oninput="ValidToMe(this.value)">
-                            <label class="mdl-textfield__label" for="value-e">Enter e value</label>
-                            <p id="Me" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-f" oninput="ValidToMf(this.value)">
-                            <label class="mdl-textfield__label" for="value-f">Enter f value</label>
-                            <p id="Mf" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LA" oninput="ValidToMLa(this.value)" >
-                            <label class="mdl-textfield__label" for="value-LA">Enter angle A</label>
-                            <p id="MLa" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LC" oninput="ValidToMLc(this.value)">
-                            <label class="mdl-textfield__label" for="value-LC">Enter angle C</label>
-                            <p id="MLc" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LD" oninput="ValidToMLd(this.value)">
-                            <label class="mdl-textfield__label" for="value-LD">Enter angle D</label>
-                            <p id="MLd" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-
-                        <center>
-                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction2()">
-                                Submit
-                            </button>
-                        </center>
-                    </div>
-                    <div class="col-sm-1">
-                    </div>
-                    
-                        <div class="col-sm-6">
-                            <div class="panel panel-success">
-
-                                <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
-                                <div class="panel-body">
-                                    <center>
-                                        <canvas width="500" height="500" id="my_Canvas2"></canvas>
-                                    </center>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <button id="help1" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin1('/images/multiple.png')">
-                                <i class="material-icons">?</i>
-                            </button>
-
-                            <div class="mdl-tooltip" data-mdl-for="help1">
-                                Help
-                            </div>
-                        </div>
-
-                    </div>
-            </form>
-
-
-
-
-
-        </div>
-    </div>
-
-
-    @*Complex problems*@
-    <div class="mdl-tabs__panel" id="complex-panel">
-
-        <div class="panel panel-success">
-
-            <form action="#">
-                <br />
-                <br>
-
-                <div class="container text-center">
-                    <div class="col-sm-3">
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-a1" name="quadrant1"  oninput="ValidToCa(this.value)">
-                            <label class="mdl-textfield__label" for="value-a1">Enter a value</label>
-                            
-                            <p id="Ca" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-b1" oninput="ValidToCb(this.value)">
-                            <label class="mdl-textfield__label" for="value-b1">Enter b value</label>
-                            <p id="Cb" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-c1" oninput="ValidToCc(this.value)">
-                            <label class="mdl-textfield__label" for="value-c1">Enter c value</label>
-                            <p id="Cc" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-d1" oninput="ValidToCd(this.value)">
-                            <label class="mdl-textfield__label" for="value-d1">Enter d value</label>
-                            <p id="Cd" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LA1" oninput="ValidToCLa(this.value)">
-                            <label class="mdl-textfield__label" for="value-LA1">Enter angle A</label>
-                            <p id="CLa" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LB1" oninput="ValidToCLb(this.value)">
-                            <label class="mdl-textfield__label" for="value-LB1">Enter angle B</label>
-                            <p id="CLb" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LC1" oninput="ValidToCLc(this.value)">
-                            <label class="mdl-textfield__label" for="value-LC1">Enter angle C</label>
-                            <p id="CLc" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="value-LD1" oninput="ValidToCLd(this.value)">
-                            <label class="mdl-textfield__label" for="value-LD1">Enter angle D</label>
-                            <p id="CLd" style="color : red; font : bold 18px arial,verdana;"></p>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-6">
-                        <div class="panel panel-success">
-
-                            <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
-                            <div class="panel-body">
-                                <center>
-                                    <canvas width="500" height="400" id="my_Canvas3"></canvas>
-                                </center>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <button id="help2" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" onclick="openWin2('/images/Complex.png')">
-                            <i class="material-icons">?</i>
-                        </button>
-
-                        <div class="mdl-tooltip" data-mdl-for="help2">
-                            Help
-                        </div>
-                    </div>
-
-
-                </div>
-                <center>
-                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction3()">
-                        Submit
-                    </button>
-                </center>
-            </form>
-
-
-
-
 
         </div>
 
-
-
     </div>
-  
-</div>
 
 </body>
 

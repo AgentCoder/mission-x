@@ -6,7 +6,7 @@ function param() {
    
   
              /*=================Creating a canvas=========================*/
-             var canvas = document.getElementById('my_Canvas');
+             var canvas = document.getElementById('3canvas');
     gl = canvas.getContext('experimental-webgl'); 
     var radians = Number(document.getElementById("pointA").value) * (Math.PI / 180);
     var xb = Math.cos(radians);

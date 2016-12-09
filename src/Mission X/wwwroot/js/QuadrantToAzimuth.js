@@ -83,9 +83,7 @@ function generateFigure(angle, dipdirection) {
             x_dippoint = 0.2;
             y_dippoint = -0.2;
         }
-        else {
-            window.alert("invalid dipdirection");
-        }
+        
 
     var canvas = document.getElementById('my_Canvas');
     var gl = canvas.getContext('experimental-webgl');

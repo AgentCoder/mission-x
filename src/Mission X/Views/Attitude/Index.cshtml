@@ -260,12 +260,12 @@
                                             <br /><br />
                                             Degrees: <p id="degreeResult1"></p>
                                             <input id="slider11" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
-                                                   oninput="paces(this.value, document.getElementById('slider12').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces(this.value, document.getElementById('slider12').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
                                             Paces: <p id="pacesResult1"></p>
                                             <input id="slider12" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
-                                                   oninput="paces(document.getElementById('slider11').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces(document.getElementById('slider11').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
 
 
 
@@ -295,14 +295,12 @@
                                             <br /><br />
                                             Degrees: <p id="degreeResult2"></p>
                                             <input id="slider21" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
-                                                   oninput="paces2(this.value, document.getElementById('slider22').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces2(this.value, document.getElementById('slider22').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
                                             Paces: <p id="pacesResult2"></p>
                                             <input id="slider22" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
-                                                   oninput="paces2(document.getElementById('slider21').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces2(document.getElementById('slider21').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
-
-
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
 
 
                                         </div>
@@ -317,7 +315,7 @@
                                             <div class="form-group" id="dd3">
 
                                                 <div class="col-sm-10">
-                                                    <select id="select111" class="form-control">
+                                                    <select id="select113" class="form-control">
                                                         <option value="NE">North - East</option>
                                                         <option value="NW">North - West</option>
                                                         <option value="SE">South - East</option>
@@ -330,12 +328,12 @@
                                             <br /><br />
                                             Degrees: <p id="degreeResult3"></p>
                                             <input id="slider31" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
-                                                   oninput="paces(this.value, document.getElementById('slider32').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces(this.value, document.getElementById('slider32').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
                                             Paces: <p id="pacesResult3"></p>
                                             <input id="slider32" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
-                                                   oninput="paces(document.getElementById('slider31').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces(document.getElementById('slider31').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
 
 
                                         </div>
@@ -351,7 +349,7 @@
                                             <div class="form-group" id="dd4">
 
                                                 <div class="col-sm-10">
-                                                    <select id="select111" class="form-control">
+                                                    <select id="select114" class="form-control">
                                                         <option value="NE">North - East</option>
                                                         <option value="NW">North - West</option>
                                                         <option value="SE">South - East</option>
@@ -364,12 +362,12 @@
                                             <br /><br />
                                             Degrees: <p id="degreeResult4"></p>
                                             <input id="slider41" class="mdl-slider mdl-js-slider" type="range" min="0" max="90" value="0"
-                                                   oninput="paces(this.value, document.getElementById('slider42').value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces(this.value, document.getElementById('slider42').value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
                                             Paces: <p id="pacesResult4"></p>
                                             <input id="slider42" class="mdl-slider mdl-js-slider" type="range" min="0" max="20" value="0" tabindex="0"
-                                                   oninput="paces(document.getElementById('slider41').value,this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)"
-                                                   onchange="paces(document.getElementById('slider41').value, this.value, document.getElementById('slider13').value, document.getElementById('slider14').value)" />
+                                                   oninput="paces()"
+                                                   onchange="paces()" />
 
 
 
@@ -378,16 +376,6 @@
                                     </div>
 
                                 </div>
-
-
-
-
-
-
-
-
-                                <div style="color:red" id="error1"></div>
-
 
                             </form>
 
@@ -421,19 +409,14 @@
 
                                 Scale:
                                 <p id="scaleResultX"></p>
-                                <p id="scaleResultY"></p>
+                                
 
                                 <p style="width:200px">
 
 
                                     <input id="slider13" class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5"
-                                           tabindex="0" oninput="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, this.value, document.getElementById('slider14').value)"
-                                           onchange="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, this.value, document.getElementById('slider12').value)" />
-
-
-                                    <input id="slider14" class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5"
-                                           tabindex="0" oninput="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, document.getElementById('slider13').value, this.value)"
-                                           onchange="paces(document.getElementById('slider11').value, document.getElementById('slider12').value, document.getElementById('slider13').value, this.value)" />
+                                           tabindex="0" oninput="paces()"
+                                           onchange="paces()" />
                                 </p>
 
 

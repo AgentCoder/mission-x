@@ -69,5 +69,6 @@
     dip = Math.atan(dip);
     var dipa = (dip * 180.0) / Math.PI;
     document.getElementById('msg4').innerHTML = dipa;
+    param();
 }
 

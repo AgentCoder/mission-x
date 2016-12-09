@@ -4,7 +4,16 @@
 @{
 }
 
-<div class="card-panel">
+
+<style type="text/css">
+    #3canvas {
+        z-index: 998;
+        opacity: 70;
+        background: white;
+    }
+</style>
+
+<div class="card-panel" style="width:50px">
 
     <div class="mdl-card__title">
         <div class="panel panel-default">
@@ -15,73 +24,99 @@
             <div class="mdl-card__supporting-text"><h3>Please enter the respective notation to get the equivalent notations.</h3></div>
 
             <div class="mdl-card__actions mdl-card--border">
-                <form action="myform">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointA" oninput="ValidToA(this.value)" maxlength="4">
-                        <label class="mdl-textfield__label" for="pointA">Enter a middle point on the rock</label>
-                        <p id="Sa" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointB" oninput="ValidToB(this.value)" maxlength="4" />
-                        <label class="mdl-textfield__label" for="pointB">Enter the highest point on rock</label>
-                        <p id="Sb" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
+
+                <table border="0">
+                    <tr>
+                        <td>
+                            <form action="myform">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="pointA" oninput="ValidToA(this.value)" maxlength="4">
+                                    <label class="mdl-textfield__label" for="pointA">Enter a middle point on the rock</label>
+                                    <p id="Sa" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>&nbsp;
+                                &nbsp;&nbsp;
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="pointB" oninput="ValidToB(this.value)" maxlength="4" />
+                                    <label class="mdl-textfield__label" for="pointB">Enter the highest point on rock</label>
+                                    <p id="Sb" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br />
 
 
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="pointC" oninput="ValidToC(this.value)" maxlength="4">
-                        <label class="mdl-textfield__label" for="pointC">Enter the lowest point on the rock</label>
-                        <p id="Sc" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="dist" oninput="ValidToLA(this.value)" maxlength="3">
-                        <label class="mdl-textfield__label" for="dist">Enter the first distane</label>
-                        <p id="SLa" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="dist1" oninput="ValidToLB(this.value)" maxlength="3">
-                        <label class="mdl-textfield__label" for="dist1">Enter the other distance</label>
-                        <p id="SLb" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="bear1" oninput="ValidToMa(this.value)" maxlength="3">
-                        <label class="mdl-textfield__label" for="bear1">Enter the first bearing</label>
-                        <p id="Ma" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
-                    <br>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="bear2" oninput="ValidToMb(this.value)" maxlength="3">
-                        <label class="mdl-textfield__label" for="bear2">Enter the second bearing</label>
-                        <p id="Mb" style="color : red; font : bold 18px arial,verdana;"></p>
-                    </div>
-                    <br>
-                    <center>
-                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu(); param();">
-                            Submit
-                        </button>
-                        @*<div id="3error"></div>*@
-                        <div id="msg"></div>
-                        <div id="msg1"></div>
-                        <div id="msg2"></div>
-                        <div id="msg3"></div>
-                        <div id="msg4"></div>
-                    </center>
-                    <br>
-                    <br\>
-                    <div class="col-sm-8">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
-                            <div class="panel-body">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="pointC" oninput="ValidToC(this.value)" maxlength="4">
+                                    <label class="mdl-textfield__label" for="pointC">Enter the lowest point on the rock</label>
+                                    <p id="Sc" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="dist" oninput="ValidToLA(this.value)" maxlength="3">
+                                    <label class="mdl-textfield__label" for="dist">Enter the first distane</label>
+                                    <p id="SLa" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="dist1" oninput="ValidToLB(this.value)" maxlength="3">
+                                    <label class="mdl-textfield__label" for="dist1">Enter the other distance</label>
+                                    <p id="SLb" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>&nbsp;&nbsp;&nbsp;
+                                
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="bear1" oninput="ValidToMa(this.value)" maxlength="3">
+                                    <label class="mdl-textfield__label" for="bear1">Enter the first bearing</label>
+                                    <p id="Ma" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="bear2" oninput="ValidToMb(this.value)" maxlength="3">
+                                    <label class="mdl-textfield__label" for="bear2">Enter the second bearing</label>
+                                    <p id="Mb" style="color : red; font : bold 18px arial,verdana;"></p>
+                                </div>
+                                <br>
                                 <center>
-                                    <canvas width="1000" height="400" id="3canvas"></canvas>
+                                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="calcu()">
+                                        Submit
+                                    </button>
+
                                 </center>
+                                <br>
+                                <br\>
+                                    
+                            </form>
+
+                        </td>
+
+                        <td style="padding-left:5em">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> Strike and Dip Values </div>
+                                <div class="panel-body">
+                                <b>Strike:</b>
+                                    <div id="msg"></div>
+                                    <div id="msg1"></div>
+                                    <div id="msg2"></div>
+                                    <div id="msg3"></div><br />
+                                    <b>Dip Angle:</b><div id="msg4"></div>
+
+
+                                </div>
                             </div>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+                <div class="col-sm-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Graphical Orientation for Inputs Produced</div>
+                        <div class="panel-body">
+                            <center>
+                                <canvas width="1000" height="400" id="3canvas"></canvas>
+                            </center>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

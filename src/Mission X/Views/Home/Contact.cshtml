@@ -1,17 +1,366 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+﻿
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    @{
+        ViewData["Title"] = "Contact";
+    }
+    @*<h2>@ViewData["Title"].</h2>
+        <h3>@ViewData["Message"]</h3>*@
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.green-light_green.min.css">
+        <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+
+        <style>
+            tr.spaceUnder > td {
+                padding-bottom: 2em;
+            }
+
+            .dummy-card-square.mdl-card {
+                width: 300px;
+                height: 300px;
+            }
+
+            #contactPranay {
+                height: 300px;
+                color: #fff;
+                background: url('http://i65.tinypic.com/2wfk7it.jpg') center / cover;
+            }
+
+            #contactTarakesh {
+                height: 300px;
+                color: #fff;
+                background: url('http://i64.tinypic.com/24q0o08.jpg') center / cover;
+            }
+
+            #contactShravyaC {
+                height: 300px;
+                color: #fff;
+                background: url('http://i64.tinypic.com/sl02fb.jpg') center / cover;
+            }
+
+            #contactShravyaL {
+                height: 300px;
+                color: #fff;
+                background: url('http://i63.tinypic.com/eal3z5.jpg') center / cover;
+            }
+
+            #contactPreethi {
+                height: 300px;
+                color: #fff;
+                background: url('http://i66.tinypic.com/346rwuc.jpg') center / cover;
+            }
+
+            #contactDeepak {
+                height: 300px;
+                color: #fff;
+                background: url('http://i68.tinypic.com/25tjbj4.jpg') center / cover;
+            }
+
+            #contactJujjavarapu {
+                height: 300px;
+                color: #fff;
+                background: url('http://i66.tinypic.com/2rg2fww.jpg') center / cover;
+            }
+
+            #contactKuppili {
+                height: 300px;
+                color: #fff;
+                background: url('http://i65.tinypic.com/b8nsc2.jpg') center / cover;
+            }
+
+            #contactShashi {
+                height: 300px;
+                color: #fff;
+                background: url('http://i66.tinypic.com/2cadjo.jpg') center / cover;
+            }
+
+            #contactShaik {
+                height: 300px;
+                color: #fff;
+                background: url('http://i68.tinypic.com/343rqbk.jpg') center / cover;
+            }
+
+            #contactOudshoorn {
+                height: 300px;
+                color: #fff;
+                background: url('http://i67.tinypic.com/w0g784.jpg') center / cover;
+            }
+
+            #contactGoswami {
+                height: 300px;
+                color: #fff;
+                background: url('http://i66.tinypic.com/2j4qa2u.jpg') center / cover;
+            }
+
+            span.highlight {
+                background-color: transparent;
+            }
+
+            .dummy-card-square > .mdl-card__title {
+                height: 300px;
+                color: #fff;
+                background: url('') center / cover;
+            }
+
+            .dummy-card-square > .mdl-card__actions {
+                background-color: azure;
+            }
+
+            .dummy-card-square > .mdl-card__menu {
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+       
+
+
+        <table>
+            <tr class="spaceUnder">
+
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactGoswami">
+
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text color"><span class="highlight">  Arghya Goswami  </span></h2>
+                        </div>
+
+                        <div class="mdl-card__actions  highlight mdl-card--border">
+
+                            <button id="show-dialog" type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">More Info</button>
+                            <dialog class="mdl-dialog">
+                                <h4 class="mdl-dialog__title">Arghya Goswami</h4>
+                                <div class="mdl-dialog__content">
+
+                                    <p>
+                                        <b>
+                                            Assistant Professor,<br />
+                                            Natural Sciences Department,<br />
+                                            Northwest Missouri State University<b />
+                                    <p>
+                                    <p><b>Role - Client </b></p>
+                                    <p><b>Contact no - 660.562.1719</b></p>
+                                </div>
+                                <div class="mdl-dialog__actions">
+                                    <button type="button" class="mdl-button close mdl-button--colored mdl-js-button mdl-js-ripple-effect ">Close</button>
+                                </div>
+                            </dialog>
+
+                        </div>
+                        <script>
+                     var dialog = document.querySelector('dialog');
+                     var showDialogButton = document.querySelector('#show-dialog');
+                     if (! dialog.showModal) {
+                           dialogPolyfill.registerDialog(dialog);
+                        }
+                    showDialogButton.addEventListener('click', function() {
+                    dialog.showModal();
+                    });
+                    dialog.querySelector('.close').addEventListener('click', function() {
+                    dialog.close();
+                  });
+                        </script>
+                    </div>
+
+                </td>
+
+
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactOudshoorn">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Micheal Oudshoorn</h2>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+
+                            <button id="show-dialogOudshoorn" type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">More Info</button>
+                            <dialog class="mdl-dialog">
+                                <h4 class="mdl-dialog__title">Micheal Oudshoorn</h4>
+                                <div class="mdl-dialog__content">
+                                    <p>Bio and other details</p>
+                                </div>
+
+                                <div class="mdl-dialog__actions">
+                                    <button type="button" class="mdl-button close mdl-button--colored mdl-js-button mdl-js-ripple-effect">Close</button>
+                                </div>
+                            </dialog>
+
+                        </div>
+                        <script>
+                    var dialog = document.querySelector('dialog');
+                    var showDialogButton = document.querySelector('#show-dialogOudshoorn');
+                    if (!dialog.showModal) {
+                        dialogPolyfill.registerDialog(dialog);
+                    }
+                    showDialogButton.addEventListener('click', function () {
+                        dialog.showModal();
+                    });
+                    dialog.querySelector('.close').addEventListener('click', function () {
+                        dialog.close();
+                    });
+                        </script>
+                    </div>
+
+                </td>
+
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactPranay">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Pranay Peddi</h2>
+                        </div>
+                        <div class="mdl-card_media">
+
+                        </div>
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+
+
+            </tr>
+            <tr class="spaceUnder">
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactPreethi">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Preethi Gangireddy</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactShravyaC">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Shravya Channamadhavuni</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactDeepak">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Deepak Ratna Meher Atmuri</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+
+
+            </tr>
+            <tr class="spaceUnder">
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactJujjavarapu">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Krishna Kishore Jujjavarapu</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactShashi">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Shashi Theja Gandham</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border ">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactTarakesh">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Tarakesh Gogi</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+
+                </td>
+                <td />
+            </tr>
+            <tr>
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactShaik">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Mohammad Imaduddin Shaik</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactKuppili">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Karthik Kuppili</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+
+
+                <td>
+                    <div class="dummy-card-square mdl-card mdl-shadow--2dp" id="contactShravyaL">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Shravya Lankapali</h2>
+                        </div>
+
+
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+  
